@@ -6,7 +6,7 @@
   <title>Filmy Cine Time</title>
   <style>
     body {
-      background-color: #121212;
+      background-color: #222;
       color: #fff;
       font-family: Arial, sans-serif;
       margin: 0;
@@ -17,28 +17,20 @@
       text-align: center;
     }
     .post {
-      background: #1e1e1e;
+      background: #333;
       padding: 15px;
-      margin-bottom: 20px;
-      border-radius: 10px;
+      margin-bottom: 30px;
+      border-radius: 8px;
     }
     .post h2 {
       color: #ff4d4d;
-      margin-bottom: 10px;
     }
     .post img {
       max-width: 100%;
-      border-radius: 10px;
-      margin-bottom: 10px;
+      border-radius: 12px;
+      margin-bottom: 15px;
     }
-    .post p, .download-btn {
-      display: none;
-    }
-    .post.active p,
-    .post.active .download-btn {
-      display: block;
-    }
-    .continue-btn, .download-btn {
+    .download-btn, .continue-btn {
       display: inline-block;
       margin-top: 10px;
       padding: 10px 20px;
@@ -46,103 +38,95 @@
       color: white;
       text-decoration: none;
       border-radius: 5px;
-      cursor: pointer;
+    }
+    .full-content {
+      display: none;
     }
     .ad-slot {
       text-align: center;
-      margin: 30px 0;
+      margin: 20px 0;
     }
   </style>
 </head>
 <body>
-  <h1>Filmy Cine Time - Latest Movies</h1>
 
-  <!-- Top Ad -->
+  <h1>Filmy Cine Time - Latest Posts</h1>
+
+  <!-- POST 1 -->
+  <div class="post" id="post-ramayan">
+    <h2>Movie Title: RAMAYAN</h2>
+    <img src="https://raw.githubusercontent.com/Filmy-Cine-Time/Filmy-Cine-Time.github.io/main/image/ramayan.jpg" alt="Ramayan Movie Poster">
+    <p>Yeh movie ek action-thriller hai jo 2023 mein release hui thi.</p>
+
+    <a class="continue-btn" href="javascript:void(0);" onclick="showContent('ramayan')">Tap to Continue</a>
+
+    <div id="content-ramayan" class="full-content">
+      <p>Ismein dhamakedar scenes aur zabardast story hai. Aapko zarur pasand aayegi.</p>
+      <a class="download-btn" href="https://linksense.in/GN0pFc" target="_blank">Download Now</a>
+    </div>
+  </div>
+
+  <!-- AD SLOT -->
   <div class="ad-slot">
-    <<script async="async" data-cfasync="false" src="//pl26679166.profitableratecpm.com/209f41eac15d1eacecadb656854af497/invoke.js"></script>
-<div id="container-209f41eac15d1eacecadb656854af497"></div>>
-  </div>
-	
-<!-- Post 2 -->
-  <div class="post" id="post-The_Conjuring_Hindi_Dubbed">
-    <h2>Movie Title: The_Conjuring_Hindi_Dubbed</h2>
-    <img src="https://raw.githubusercontent.com/Filmy-Cine-Time/Filmy-Cine-Time.github.io/main/image/the-conjuring-last-rites.jpg" alt="Animal Poster">
-    <button class="continue-btn">Tap to Continue</button>
-    <p>Paranormal investigators Ed and Lorraine Warren take on one last terrifying case involving mysterious entities they must confront.
-Director : Michael Chaves
-Writers : Ian GoldbergRichard NaingDavid Leslie Johnson-McGoldrick
-Stars: Vera FarmigaPatrick WilsonBeau Gadsdon</p>
-    <a class="download-btn" href="https://linksense.in/GN0pFc" target="_blank">Get Your Link</a>
+    <!-- Replace below script with your Ad code -->
+    <script type="text/javascript">
+      atOptions = {
+        'key' : 'YOUR_AD_KEY_1',
+        'format' : 'iframe',
+        'height' : 250,
+        'width' : 300,
+        'params' : {}
+      };
+    </script>
+    <script type="text/javascript" src="//www.highperformanceformat.com/YOUR_AD_KEY_1/invoke.js"></script>
   </div>
 
-  <!-- Post 1 -->
-  <div class="post">id="post-Ramayan">
-    <h2>Movie Title: Ramayan</h2>
-    <img src="https://raw.githubusercontent.com/Filmy-Cine-Time/Filmy-Cine-Time.github.io/main/image/ramayan2.jpg" alt="Ramayan Poster">
-    <button class="continue-btn">Tap to Continue</button>
-    <p>Yeh movie ek action-thriller hai jo 2023 mein release hui thi. Ismein dhamakedar scenes aur zabardast story hai.</p>
-    <a class="download-btn" href="https://linksense.in/GN0pFc" target="_blank">Get Your Link</a>
+  <!-- POST 2 -->
+  <div class="post" id="post-example">
+    <h2>Movie Title: Example Movie</h2>
+    <img src="https://raw.githubusercontent.com/Filmy-Cine-Time/Filmy-Cine-Time.github.io/main/image/example.jpg" alt="Example Movie Poster">
+    <p>Ek zabardast film jisme emotions aur action ka combo hai.</p>
+
+    <a class="continue-btn" href="javascript:void(0);" onclick="showContent('example')">Tap to Continue</a>
+
+    <div id="content-example" class="full-content">
+      <p>Ismein strong storyline aur emotional scenes hain.</p>
+      <a class="download-btn" href="https://yourdownloadlink.com" target="_blank">Download Now</a>
+    </div>
   </div>
 
-  <!-- Mid Ad -->
+  <!-- AD SLOT -->
   <div class="ad-slot">
-    <<script type="text/javascript">
-	atOptions = {
-		'key' : '374d428da381c7ef3c5b425d6ecb63cb',
-		'format' : 'iframe',
-		'height' : 50,
-		'width' : 320,
-		'params' : {}
-	};
-</script>
-<script type="text/javascript" src="//www.highperformanceformat.com/374d428da381c7ef3c5b425d6ecb63cb/invoke.js"></script>>
+    <!-- Replace below script with your Ad code -->
+    <script type="text/javascript">
+      atOptions = {
+        'key' : 'YOUR_AD_KEY_2',
+        'format' : 'iframe',
+        'height' : 250,
+        'width' : 300,
+        'params' : {}
+      };
+    </script>
+    <script type="text/javascript" src="//www.highperformanceformat.com/YOUR_AD_KEY_2/invoke.js"></script>
   </div>
 
-<!-- Mid Ad -->
-  <div class="ad-slot">
-    <<script type="text/javascript">
-	atOptions = {
-		'key' : '01c9af1532b509e005bf16b2aad3a46b',
-		'format' : 'iframe',
-		'height' : 250,
-		'width' : 300,
-		'params' : {}
-	};
-</script>
-<script type="text/javascript" src="//www.highperformanceformat.com/01c9af1532b509e005bf16b2aad3a46b/invoke.js"></script>>
-  </div>
-
-<!-- Post 3 -->
-  <div class="post">
-    <h2>Movie Title: Animal</h2>
-    <img src="https://raw.githubusercontent.com/Filmy-Cine-Time/Filmy-Cine-Time.github.io/main/image/animal.jpg" alt="Animal Poster">
-    <button class="continue-btn">Tap to Continue</button>
-    <p>Animal 2023 ki blockbuster emotional-action film hai, jisme Ranbir Kapoor ne zabardast acting ki hai.</p>
-    <a class="download-btn" href="https://linksense.in/YOUR-LINK-HERE" target="_blank">Get Your Link</a>
-  </div>
-	
-  <!-- Bottom Ad -->
-  <div class="ad-slot">
-    <<script type="text/javascript">
-	atOptions = {
-		'key' : '2e3b06efedb57a2cf8338294eb132644',
-		'format' : 'iframe',
-		'height' : 300,
-		'width' : 160,
-		'params' : {}
-	};
-</script>
-<script type="text/javascript" src="//www.highperformanceformat.com/2e3b06efedb57a2cf8338294eb132644/invoke.js"></script>>
-  </div>
-
+  <!-- JS FOR CONTENT TOGGLE -->
   <script>
-    const buttons = document.querySelectorAll(".continue-btn");
-    buttons.forEach((btn) => {
-      btn.addEventListener("click", () => {
-        const post = btn.parentElement;
-        post.classList.toggle("active");
-      });
-    });
+    function showContent(postId) {
+      document.getElementById("content-" + postId).style.display = "block";
+    }
+
+    // Auto show post if linked directly with hash
+    window.onload = function() {
+      const hash = window.location.hash;
+      if (hash) {
+        const postId = hash.replace('#', '');
+        showContent(postId);
+        const el = document.getElementById('post-' + postId);
+        if (el) el.scrollIntoView({ behavior: "smooth" });
+      }
+    };
   </script>
+
 </body>
 </html>
