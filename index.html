@@ -26,20 +26,19 @@
         </main>
 
         <aside class="sidebar">
-            <h3>ads</h3>
+            <h3>ADS</h3>
             <div class="ad-widget">
-                <img src="images/ad-placeholder.png" alt="Ad Placeholder 1">
+                <img src="images/ad-placeholder.png" alt="Ad 1">
                 <p><script type="text/javascript">
 	atOptions = {
-		'key' : '2e3b06efedb57a2cf8338294eb132644',
+		'key' : '01c9af1532b509e005bf16b2aad3a46b',
 		'format' : 'iframe',
-		'height' : 300,
-		'width' : 160,
+		'height' : 250,
+		'width' : 300,
 		'params' : {}
 	};
 </script>
-<script type="text/javascript" src="//www.highperformanceformat.com/2e3b06efedb57a2cf8338294eb132644/invoke.js"></script></p>
-            
+<script type="text/javascript" src="//www.highperformanceformat.com/01c9af1532b509e005bf16b2aad3a46b/invoke.js"></script></p>
             </div>
 
             <div class="ad-widget">
@@ -55,84 +54,78 @@
 <script type="text/javascript" src="//www.highperformanceformat.com/50c0182ae44e5b56cd73342393d2e26a/invoke.js"></script></p>
             </div>
         </aside>
-    </div>
-<div class="ad-widget">
-                <img src="images/ad-placeholder.png" alt="Ad Placeholder 1">
-<p> <script type="text/javascript">
+	    <aside class="sidebar">
+            <h3>ads</h3>
+            <div class="ad-widget">
+                <img src="images/ad-placeholder.png" alt="Ad">
+                <p><script type="text/javascript">
 	atOptions = {
-		'key' : '01c9af1532b509e005bf16b2aad3a46b',
+		'key' : '2e3b06efedb57a2cf8338294eb132644',
 		'format' : 'iframe',
-		'height' : 250,
-		'width' : 300,
+		'height' : 300,
+		'width' : 160,
 		'params' : {}
 	};
 </script>
-<script type="text/javascript" src="//www.highperformanceformat.com/01c9af1532b509e005bf16b2aad3a46b/invoke.js"></script></p>
+<script type="text/javascript" src="//www.highperformanceformat.com/2e3b06efedb57a2cf8338294eb132644/invoke.js"></script></p>
+
     </div>
-        </aside>
-    </div>
-<div class="ad-widget">
-                <img src="images/ad-placeholder.png" alt="Ad Placeholder 1">
-    <p> </p>
+
+
+	
     <footer>
         <div class="container">
-            <p>© 2023 Filmy Cine Time. All rights reserved.</p>
+            <p>© 2023 Filmy Cine Time.</p>
             <p>Disclaimer: This site does not store any files on its server. All contents are provided by non-affiliated third parties.</p>
         </div>
     </footer>
 
-    <!-- index.html ke neeche wala script section -->
-<script src="movies-data.js"></script>
-<script>
-    function renderMovies() {
-        const movieListContainer = document.getElementById('movie-list-container');
-        if (!movieListContainer) {
-            console.error("Movie list container not found!");
-            return;
-        }
-        if (typeof movies === 'undefined' || movies.length === 0) {
-            movieListContainer.innerHTML = "<p>No movies found. Check movies-data.js</p>";
-            return;
-        }
-
-        let htmlContent = "";
-        movies.forEach(movie => {
-            const encodedDownloadLink = encodeURIComponent(movie.actualDownloadLink);
-            const downloadPageLink = `download-page.html?link=${encodedDownloadLink}`;
-
-            // YAHAN CHANGE KIYA HAI: article tag mein id="${movie.id}" add kiya hai
-            htmlContent += `
-                <article class="movie-card" id="${movie.id}"> 
-                    <div class="movie-poster">
-                        <img src="${movie.poster}" alt="${movie.title} Poster">
-                    </div>
-                    <div class="movie-details">
-                        <h3><a href="#">${movie.title}</a></h3>
-                        <p class="movie-meta"><strong>Release date:</strong> ${movie.releaseDate} | <strong>Style:</strong> ${movie.genre}</p>
-                        <p class="movie-director"><strong>director:</strong> ${movie.director}</p>
-                        <p class="movie-cast"><strong>artists:</strong> ${movie.cast}</p>
-                        <p class="movie-description">${movie.description}</p>
-                        <div class="movie-actions">
-                            <a href="${downloadPageLink}" class="download-button" target="_blank">CONTINUE </a>
-                        </div>
-                    </div>
-                </article>
-            `;
-        });
-        movieListContainer.innerHTML = htmlContent;
-
-        // Scroll to movie if ID is in URL fragment
-        if (window.location.hash) {
-            const targetId = window.location.hash.substring(1); // # ke bina ID
-            const targetElement = document.getElementById(targetId);
-            if (targetElement) {
-                targetElement.scrollIntoView({ behavior: 'smooth' });
+    <script src="movies-data.js"></script> <!-- Sabse pehle movie data load karein -->
+    <script>
+        // This script will render movies from movies-data.js
+        function renderMovies() {
+            const movieListContainer = document.getElementById('movie-list-container');
+            if (!movieListContainer) {
+                console.error("Movie list container not found!");
+                return;
             }
-        }
-    }
+            if (typeof movies === 'undefined' || movies.length === 0) {
+                movieListContainer.innerHTML = "<p>No movies found or movies data couldn't be loaded. Check movies-data.js</p>";
+                return;
+            }
 
-    window.onload = renderMovies;
-</script>
+            let htmlContent = "";
+            // movies array movies-data.js se aa raha hai
+            movies.forEach(movie => {
+                // Encode the actualDownloadLink to be safely used in a URL
+                const encodedDownloadLink = encodeURIComponent(movie.actualDownloadLink);
+                // The link to the download page, passing the actual download link as a parameter
+                const downloadPageLink = `download-page.html?link=${encodedDownloadLink}`;
+
+                htmlContent += `
+                    <article class="movie-card">
+                        <div class="movie-poster">
+                            <img src="${movie.poster}" alt="${movie.title} Poster">
+                        </div>
+                        <div class="movie-details">
+                            <h3><a href="#">${movie.title}</a></h3>
+                            <p class="movie-meta"><strong>रिलीज़ तिथि:</strong> ${movie.releaseDate} | <strong>शैली:</strong> ${movie.genre}</p>
+                            <p class="movie-director"><strong>निर्देशक:</strong> ${movie.director}</p>
+                            <p class="movie-cast"><strong>कलाकार:</strong> ${movie.cast}</p>
+                            <p class="movie-description">${movie.description}</p>
+                            <div class="movie-actions">
+                                <a href="${downloadPageLink}" class="download-button" target="_blank">GET DOWNLOAD PAGE</a>
+                            </div>
+                        </div>
+                    </article>
+                `;
+            });
+            movieListContainer.innerHTML = htmlContent;
+        }
+
+        // Render movies when the page loads
+        window.onload = renderMovies;
+    </script>
 
 </body>
 </html>
