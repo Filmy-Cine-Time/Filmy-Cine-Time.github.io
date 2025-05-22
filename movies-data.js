@@ -5,7 +5,7 @@
 
 // movies-data.js
 const movies = [
-    { // NAYI MOVIE KA DATA YAHAN PASTE KAREIN AUR EDIT KAREIN
+    { 
         id: "Raid_2", // Ek unique ID, kuch bhi rakh sakte hain (e.g., movie-ka-naam-2024)
         title: "Raid_2",
         poster: "raid 2.jpg", // images/ folder mein poster ka path
