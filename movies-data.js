@@ -3,7 +3,8 @@
 // NAYI MOVIE ADD KARNE KE LIYE, NEECHE DIYE GAYE FORMAT MEIN EK NAYA OBJECT ADD KAREIN.
 // Sabse nayi movie ko list mein sabse UPAR rakhein.
 
-    {
+const movies = [
+      {
         id: "Raid_2", // Ek unique ID, kuch bhi rakh sakte hain (e.g., movie-ka-naam-2024)
         title: "Raid_2",
         poster: "raid 2.jpg", // images/ folder mein poster ka path
@@ -18,7 +19,7 @@
         // Example: "https://linksense.in/YOUR_KALKI_LINK"
         actualDownloadLink: "https://example.com/kalki-download-link"
     },
-const movies = [
+    
     {
         id: "movie3", // Ek unique ID, kuch bhi rakh sakte hain (e.g., movie-ka-naam-2024)
         title: "कल्कि 2898 AD (Kalki 2898 AD)",
