@@ -2,7 +2,6 @@
 
 // NAYI MOVIE ADD KARNE KE LIYE, NEECHE DIYE GAYE FORMAT MEIN EK NAYA OBJECT ADD KAREIN.
 // Sabse nayi movie ko list mein sabse UPAR rakhein.
-
 const movies = [
      
     {
