@@ -4,22 +4,7 @@
 // Sabse nayi movie ko list mein sabse UPAR rakhein.
 
 const movies = [
-      {
-        id: "Raid_2", // Ek unique ID, kuch bhi rakh sakte hain (e.g., movie-ka-naam-2024)
-        title: "Raid_2",
-        poster: "raid 2.jpg", // images/ folder mein poster ka path
-        releaseDate: "27 June 2024",
-        genre: "Sci-fi, Action, Drama",
-        director: "Nag Ashwin",
-        cast: "Prabhas, Amitabh Bachchan, Kamal Haasan, Deepika Padukone, Disha Patani",
-        description: "In 1989 Rajasthan, IPS officer Patnaik raids a palace but fails. After requesting a bribe, he's transferred to Bhoj, where he investigates Dada Bhai, a respected local figure. Suspended after a failed raid, he uncovers hidden truths.",
-        // IMPORTANT: Yahan woh FINAL download link daalein jo timer ke baad khulna chahiye
-        // Yeh woh link hai jo aap pehle DAILY_DOWNLOAD_LINK mein daal rahe the.
-        // Ab har movie ka apna alag final link hoga.
-        // Example: "https://linksense.in/YOUR_KALKI_LINK"
-        actualDownloadLink: "https://example.com/kalki-download-link"
-    },
-    
+     
     {
         id: "movie3", // Ek unique ID, kuch bhi rakh sakte hain (e.g., movie-ka-naam-2024)
         title: "कल्कि 2898 AD (Kalki 2898 AD)",
