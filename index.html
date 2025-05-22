@@ -30,17 +30,13 @@
       border-radius: 12px;
       margin-bottom: 15px;
     }
-    .download-btn, .continue-btn {
+    .read-more {
       display: inline-block;
-      margin-top: 10px;
-      padding: 10px 20px;
-      background: red;
-      color: white;
-      text-decoration: none;
-      border-radius: 5px;
-    }
-    .full-content {
-      display: none;
+      margin-top: 15px;
+      color: #00BFFF;
+      font-weight: bold;
+      text-decoration: underline;
+      font-size: 16px;
     }
     .ad-slot {
       text-align: center;
@@ -63,11 +59,7 @@
     <h2>Movie Title: RAMAYAN</h2>
     <img src="https://raw.githubusercontent.com/Filmy-Cine-Time/Filmy-Cine-Time.github.io/main/image/ramayan2.jpg" alt="Ramayan Movie Poster">
     <p>Yeh movie ek action-thriller hai jo 2023 mein release hui thi.</p>
-    <a class="continue-btn" href="#ramayan" onclick="showContent('ramayan')">Tap to Continue</a>
-    <div id="content-ramayan" class="full-content">
-      <p>Ismein dhamakedar scenes aur zabardast story hai. Aapko zarur pasand aayegi.</p>
-      <a class="download-btn" href="https://linksense.in/GN0pFc" target="_blank">Get your Link</a>
-    </div>
+    <a class="read-more" href="https://linksense.in/GN0pFc" target="_blank">READ MORE</a>
   </div>
 
   <!-- AD SLOT -->
@@ -89,14 +81,7 @@
     <h2>Movie Title: The Conjuring (Hindi Dubbed)</h2>
     <img src="https://raw.githubusercontent.com/Filmy-Cine-Time/Filmy-Cine-Time.github.io/main/image/the-conjuring-last-rites.jpg" alt="The Conjuring Poster">
     <p>Ek zabardast film jisme emotions aur action ka combo hai.</p>
-    <a class="continue-btn" href="#The_Conjuring_Hindi_Dubbed" onclick="showContent('The_Conjuring_Hindi_Dubbed')">Tap to Continue</a>
-    <div id="content-The_Conjuring_Hindi_Dubbed" class="full-content">
-      <p>Paranormal investigators Ed and Lorraine Warren take on one last terrifying case involving mysterious entities they must confront.<br>
-      <strong>Director:</strong> Michael Chaves <br>
-      <strong>Writers:</strong> Ian Goldberg, Richard Naing, David Leslie Johnson-McGoldrick <br>
-      <strong>Stars:</strong> Vera Farmiga, Patrick Wilson, Beau Gadsdon</p>
-      <a class="download-btn" href="https://yourdownloadlink.com" target="_blank">Get your Link</a>
-    </div>
+    <a class="read-more" href="https://yourdownloadlink.com" target="_blank">READ MORE</a>
   </div>
 
   <!-- AD SLOT -->
@@ -113,56 +98,27 @@
     <script type="text/javascript" src="//www.highperformanceformat.com/2e3b06efedb57a2cf8338294eb132644/invoke.js"></script>
   </div>
   
-<!-- POST 3 -->
+  <!-- POST 3 -->
   <div class="post" id="RAid_2">
     <h2>Movie Title: RAid_2 </h2>
-    <img src="https://raw.githubusercontent.com/Filmy-Cine-Time/Filmy-Cine-Time.github.io/main/image/raid 2.jpg" alt="The Conjuring Poster">
+    <img src="https://raw.githubusercontent.com/Filmy-Cine-Time/Filmy-Cine-Time.github.io/main/image/raid 2.jpg" alt="Raid 2 Poster">
     <p>Ek zabardast film jisme emotions aur action ka combo hai.</p>
-    <a class="continue-btn" href="#RAid_2" onclick="showContent('RAid_2')">Tap to Continue</a>
-    <div id="content-RAid_2" class="full-content">
-      <p>In 1989 Rajasthan, IPS officer Patnaik raids a palace but fails. After requesting a bribe, he's transferred to Bhoj, where he investigates Dada Bhai, a respected local figure. Suspended after a failed raid, he uncovers hidden truths.
-
-Director:  Raj Kumar Gupta, Writers: Raj Kumar Gupta. Ritesh ShahKaran Vyas, Stars: Ajay Devgn,Riteish Deshmukh,Vaani Kapoor
-<br>
-      <a class="download-btn" href="https://yourdownloadlink.com" target="_blank">Get your Link</a>
-    </div>
-    </div>
-	    
-<!-- AD SLOT -->
-  <div class="ad-slot">
- <script type="text/javascript">
-	atOptions = {
-		'key' : '374d428da381c7ef3c5b425d6ecb63cb',
-		'format' : 'iframe',
-		'height' : 50,
-		'width' : 320,
-		'params' : {}
-	};
-</script>
-<script type="text/javascript" src="//www.highperformanceformat.com/374d428da381c7ef3c5b425d6ecb63cb/invoke.js"></script>
-     
+    <a class="read-more" href="https://yourdownloadlink.com" target="_blank">READ MORE</a>
   </div>
-  
-  <!-- JS -->
-  <script>
-    function showContent(postId) {
-      var el = document.getElementById("content-" + postId);
-      if (el) {
-        el.style.display = "block";
-        location.hash = postId; // update URL with hash
-      }
-    }
-
-    window.onload = function() {
-      const hash = window.location.hash;
-      if (hash) {
-        const postId = hash.substring(1); // remove #
-        showContent(postId);
-        const postElement = document.getElementById("post-" + postId);
-        if (postElement) postElement.scrollIntoView({ behavior: "smooth" });
-      }
-    };
-  </script>
+	    
+  <!-- AD SLOT -->
+  <div class="ad-slot">
+    <script type="text/javascript">
+      atOptions = {
+        'key' : '374d428da381c7ef3c5b425d6ecb63cb',
+        'format' : 'iframe',
+        'height' : 50,
+        'width' : 320,
+        'params' : {}
+      };
+    </script>
+    <script type="text/javascript" src="//www.highperformanceformat.com/374d428da381c7ef3c5b425d6ecb63cb/invoke.js"></script>
+  </div>
 
 </body>
 </html>
