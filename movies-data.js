@@ -6,9 +6,9 @@
 // movies-data.js
 const movies = [
     { 
-        id: "Raid_2", // Ek unique ID, kuch bhi rakh sakte hain (e.g., movie-ka-naam-2024)
+        id: "Raid_2", 
         title: "Raid_2",
-        poster: "raid 2.jpg", // images/ folder mein poster ka path
+        poster: "images/raid 2.jpg",  folder mein poster ka path
         releaseDate: "27 June 2024",
         genre: "Sci-fi, Action, Drama",
         director: "Nag Ashwin",
