@@ -1,124 +1,107 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="hi">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Filmy Cine Time</title>
-  <style>
-    body {
-      background-color: #222;
-      color: #fff;
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 20px;
-    }
-    h1 {
-      color: #FFD700;
-      text-align: center;
-    }
-    .post {
-      background: #333;
-      padding: 15px;
-      margin-bottom: 30px;
-      border-radius: 8px;
-    }
-    .post h2 {
-      color: #ff4d4d;
-    }
-    .post img {
-      max-width: 100%;
-      border-radius: 12px;
-      margin-bottom: 15px;
-    }
-    .read-more {
-      display: inline-block;
-      margin-top: 15px;
-      color: #00BFFF;
-      font-weight: bold;
-      text-decoration: underline;
-      font-size: 16px;
-    }
-    .ad-slot {
-      text-align: center;
-      margin: 20px 0;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Filmy Cine Time - Latest Movie Info & Reviews</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <header>
+        <div class="container">
+            <a href="/" class="site-title-link">
+                <h1>Filmy Cine Time</h1>
+            </a>
+            <p>आपकी सभी पसंदीदा फिल्मों की जानकारी, रिव्यू और डाउनलोड लिंक्स!</p>
+        </div>
+    </header>
 
-  <h1>Filmy Cine Time - Latest Posts</h1>
+    <div class="container main-layout">
+        <main class="content-area">
+            <h2>नवीनतम मूवी अपडेट्स</h2>
+            <div id="movie-list-container">
+                <!-- Movie cards will be injected here by JavaScript -->
+                <p>Loading movies...</p>
+            </div>
+        </main>
 
-	<!-- AD SLOT -->
-  <div class="ad-slot">
-    <script type="text/javascript">
-      atOptions = {
-        'key' : '374d428da381c7ef3c5b425d6ecb63cb',
-        'format' : 'iframe',
-        'height' : 50,
-        'width' : 320,
-        'params' : {}
-      };
+        <aside class="sidebar">
+            <h3>विज्ञापन</h3>
+            <div class="ad-widget">
+                <img src="images/ad-placeholder.png" alt="Ad Placeholder 1">
+                <p>यहां अपना विज्ञापन कोड डालें (Adsense, etc.)</p>
+                <!-- EXAMPLE AD CODE:
+                <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-YOUR_CLIENT_ID"
+                     crossorigin="anonymous"></script>
+                <ins class="adsbygoogle"
+                     style="display:block"
+                     data-ad-client="ca-pub-YOUR_CLIENT_ID"
+                     data-ad-slot="YOUR_AD_SLOT_ID"
+                     data-ad-format="auto"
+                     data-full-width-responsive="true"></ins>
+                <script> (adsbygoogle = window.adsbygoogle || []).push({}); </script>
+                -->
+            </div>
+
+            <div class="ad-widget">
+                 <p>यहां दूसरा विज्ञापन कोड डालें</p>
+            </div>
+        </aside>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>© 2024 Filmy Cine Time. सर्वाधिकार सुरक्षित।</p>
+            <p>Disclaimer: This site does not store any files on its server. All contents are provided by non-affiliated third parties.</p>
+        </div>
+    </footer>
+
+    <script src="movies-data.js"></script> <!-- Sabse pehle movie data load karein -->
+    <script>
+        // This script will render movies from movies-data.js
+        function renderMovies() {
+            const movieListContainer = document.getElementById('movie-list-container');
+            if (!movieListContainer) {
+                console.error("Movie list container not found!");
+                return;
+            }
+            if (typeof movies === 'undefined' || movies.length === 0) {
+                movieListContainer.innerHTML = "<p>No movies found or movies data couldn't be loaded. Check movies-data.js</p>";
+                return;
+            }
+
+            let htmlContent = "";
+            // movies array movies-data.js se aa raha hai
+            movies.forEach(movie => {
+                // Encode the actualDownloadLink to be safely used in a URL
+                const encodedDownloadLink = encodeURIComponent(movie.actualDownloadLink);
+                // The link to the download page, passing the actual download link as a parameter
+                const downloadPageLink = `download-page.html?link=${encodedDownloadLink}`;
+
+                htmlContent += `
+                    <article class="movie-card">
+                        <div class="movie-poster">
+                            <img src="${movie.poster}" alt="${movie.title} Poster">
+                        </div>
+                        <div class="movie-details">
+                            <h3><a href="#">${movie.title}</a></h3>
+                            <p class="movie-meta"><strong>रिलीज़ तिथि:</strong> ${movie.releaseDate} | <strong>शैली:</strong> ${movie.genre}</p>
+                            <p class="movie-director"><strong>निर्देशक:</strong> ${movie.director}</p>
+                            <p class="movie-cast"><strong>कलाकार:</strong> ${movie.cast}</p>
+                            <p class="movie-description">${movie.description}</p>
+                            <div class="movie-actions">
+                                <a href="${downloadPageLink}" class="download-button" target="_blank">GET DOWNLOAD PAGE</a>
+                            </div>
+                        </div>
+                    </article>
+                `;
+            });
+            movieListContainer.innerHTML = htmlContent;
+        }
+
+        // Render movies when the page loads
+        window.onload = renderMovies;
     </script>
-    <script type="text/javascript" src="//www.highperformanceformat.com/374d428da381c7ef3c5b425d6ecb63cb/invoke.js"></script>
- </div>
-  <!-- POST 1 -->
-  <div class="post" id="post-ramayan">
-    <h2>Movie Title: RAMAYAN</h2>
-    <img src="https://raw.githubusercontent.com/Filmy-Cine-Time/Filmy-Cine-Time.github.io/main/image/ramayan2.jpg" alt="Ramayan Movie Poster">
-    <p>Yeh movie ek action-thriller hai jo 2023 mein release hui thi.</p>
-    <a class="read-more" href="https://linksense.in/GN0pFc" target="_blank">READ MORE</a>
-  </div>
 
-  <!-- AD SLOT -->
-  <div class="ad-slot">
-    <script type="text/javascript">
-      atOptions = {
-        'key' : '01c9af1532b509e005bf16b2aad3a46b',
-        'format' : 'iframe',
-        'height' : 250,
-        'width' : 300,
-        'params' : {}
-      };
-    </script>
-    <script type="text/javascript" src="//www.highperformanceformat.com/01c9af1532b509e005bf16b2aad3a46b/invoke.js"></script>
-  </div>
-
-  <!-- POST 2 -->
-  <div class="post" id="post-The_Conjuring_Hindi_Dubbed">
-    <h2>Movie Title: The Conjuring (Hindi Dubbed)</h2>
-    <img src="https://raw.githubusercontent.com/Filmy-Cine-Time/Filmy-Cine-Time.github.io/main/image/the-conjuring-last-rites.jpg" alt="The Conjuring Poster">
-    <p>Ek zabardast film jisme emotions aur action ka combo hai.</p>
-    <a class="read-more" href="https://yourdownloadlink.com" target="_blank">READ MORE</a>
-  </div>
-
-  <!-- AD SLOT -->
-  <div class="ad-slot">
-    <script type="text/javascript">
-      atOptions = {
-        'key' : '2e3b06efedb57a2cf8338294eb132644',
-        'format' : 'iframe',
-        'height' : 300,
-        'width' : 160,
-        'params' : {}
-      };
-    </script>
-    <script type="text/javascript" src="//www.highperformanceformat.com/2e3b06efedb57a2cf8338294eb132644/invoke.js"></script>
-  </div>
-  
-  <!-- POST 3 -->
-  <div class="post" id="RAid_2">
-    <h2>Movie Title: RAid_2 </h2>
-    <img src="https://raw.githubusercontent.com/Filmy-Cine-Time/Filmy-Cine-Time.github.io/main/image/raid 2.jpg" alt="Raid 2 Poster">
-    <p>In 1989 Rajasthan, IPS officer Patnaik raids a palace but fails. After requesting a bribe, he's transferred to Bhoj, where he investigates Dada Bhai, a respected local figure. Suspended after a failed raid, he uncovers hidden truths.</p>
-    <a class="read-more" href="https://yourdownloadlink.com" target="_blank">READ MORE</a>
-  </div>
-	    
-  </div>
-  <!-- AD SLOT -->
-  <div class="ad-slot">
-    <script async="async" data-cfasync="false" src="//pl26679166.profitableratecpm.com/209f41eac15d1eacecadb656854af497/invoke.js"></script>
-    <div id="container-209f41eac15d1eacecadb656854af497"></div>
-  </div>
-	
 </body>
 </html>
