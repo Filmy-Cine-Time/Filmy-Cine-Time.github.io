@@ -36,20 +36,25 @@
       padding: 15px;
       margin-bottom: 30px;
       border-radius: 8px;
+      position: relative;
     }
     .post h2 {
       color: #ff4d4d;
     }
-    .poster-img {
+    .post img {
       width: 300px;
       height: 250px;
       object-fit: cover;
       border-radius: 12px;
-      float: left;
-      margin-right: 15px;
+      margin-bottom: 15px;
     }
-    .description {
+    .post-content {
+      max-height: 60px;
       overflow: hidden;
+      transition: max-height 0.4s ease;
+    }
+    .post.expanded .post-content {
+      max-height: 1000px;
     }
     .read-more {
       display: inline-block;
@@ -60,124 +65,99 @@
       font-size: 16px;
       cursor: pointer;
     }
-    .continue-button {
-      display: inline-block;
+    .continue-btn {
+      display: none;
       margin-top: 15px;
-      background: #00BFFF;
-      color: #fff;
-      padding: 10px 15px;
-      border-radius: 5px;
-      text-decoration: none;
-      font-weight: bold;
+    }
+    .post.expanded .continue-btn {
+      display: inline-block;
     }
     .ad-slot {
       text-align: center;
       margin: 20px 0;
     }
-    .footer {
-      text-align: center;
-      font-size: 14px;
-      margin-top: 40px;
-      color: #aaa;
-    }
   </style>
 </head>
 <body>
 
-<h1>Filmy Cine Time - Latest Posts</h1>
+  <h1>Filmy Cine Time - Latest Posts</h1>
 
-<div class="search-container">
-  <input type="text" id="searchInput" placeholder="Search movie..." onkeyup="searchPosts()" />
-</div>
-
-<!-- AD SLOT -->
-<div class="ad-slot">
-  <script type="text/javascript">
-    atOptions = {
-      'key': '374d428da381c7ef3c5b425d6ecb63cb',
-      'format': 'iframe',
-      'height': 50,
-      'width': 320,
-      'params': {}
-    };
-  </script>
-  <script type="text/javascript" src="//www.highperformanceformat.com/374d428da381c7ef3c5b425d6ecb63cb/invoke.js"></script>
-</div>
-
-<!-- POST 1 -->
-<div class="post" id="post-Mission_Impossible_The_Final_Reckoning">
-  <h2>Movie Title: Mission Impossible - The Final Reckoning</h2>
-  <div class="post-content">
-    <img class="poster-img" src="https://raw.githubusercontent.com/Filmy-Cine-Time/Filmy-Cine-Time.github.io/main/image/Mission_Impossible_The Final Reckoning.jpg" alt="Mission Impossible Poster" />
-    <div class="description">
-      <p class="short-desc">Tom Cruise returns as Ethan Hunt in a final deadly mission...</p>
-      <div class="full-desc" style="display: none;">
-        <p>IMDb RATING : 7.6/10.<br><br>
-        Our lives are the sum of our choices. Directed by Christopher McQuarrie, starring Tom Cruise, Hayley Atwell, Ving Rhames. A breathtaking final chapter of the Mission Impossible series.</p>
-        <a class="continue-button" href="https://linksense.in/Rf6CE/" target="_blank">Continue to Download</a>
-      </div>
-      <a class="read-more" onclick="togglePost(this)">Read More</a>
-    </div>
+  <!-- Search Box -->
+  <div class="search-container">
+    <input type="text" id="searchInput" placeholder="Search movie..." onkeyup="searchPosts()" />
   </div>
-</div>
 
-<!-- POST 2 -->
-<div class="post" id="post-The_Conjuring_Hindi_Dubbed">
-  <h2>Movie Title: The Conjuring (Hindi Dubbed)</h2>
-  <div class="post-content">
-    <img class="poster-img" src="https://raw.githubusercontent.com/Filmy-Cine-Time/Filmy-Cine-Time.github.io/main/image/the-conjuring-last-rites.jpg" alt="The Conjuring Poster" />
-    <div class="description">
-      <p class="short-desc">Ek zabardast film jisme emotions aur horror dono hai...</p>
-      <div class="full-desc" style="display: none;">
-        <p>This spine-chilling horror movie brings back the classic Warren family investigations. Full of suspense, fear, and supernatural mystery!</p>
-        <a class="continue-button" href="https://linksense.in/gzjJ6CRC" target="_blank">Continue to Download</a>
-      </div>
-      <a class="read-more" onclick="togglePost(this)">Read More</a>
+  <!-- Example POST -->
+  <div class="post" id="post-Mission_Impossible_The_Final_Reckoning">
+    <h2>Movie Title: Mission Impossible The Final Reckoning</h2>
+    <img src="https://raw.githubusercontent.com/Filmy-Cine-Time/Filmy-Cine-Time.github.io/main/image/Mission_Impossible_The Final Reckoning.jpg" alt="Poster">
+    
+    <div class="post-content">
+      <p>IMDb RATING : 7.6/10</p>
+      <p>Our lives are the sum of our choices. Tom Cruise is Ethan Hunt in Mission: Impossible - The Final Reckoning. Director: Christopher McQuarrie, Writers: Bruce Geller, Erik Jendresen, Christopher McQuarrie, Stars: Tom Cruise, Hayley Atwell, Ving Rhames</p>
     </div>
+    
+    <span class="read-more" onclick="togglePost(this)">READ MORE</span>
+    <br>
+    <a class="read-more continue-btn" href="https://linksense.in/Rf6CE/" target="_blank">Continue</a>
   </div>
-</div>
 
-<!-- FOOTER -->
-<div class="footer">
-  <p>© 2023 Filmy Cine Time.</p>
-  <p>Disclaimer: This site does not store any files on its server. All contents are provided by non-affiliated third parties.</p>
-</div>
+  <!-- AD SLOT -->
+  <div class="ad-slot">
+    <script type="text/javascript">
+      atOptions = {
+        'key' : '01c9af1532b509e005bf16b2aad3a46b',
+        'format' : 'iframe',
+        'height' : 250,
+        'width' : 300,
+        'params' : {}
+      };
+    </script>
+    <script type="text/javascript" src="//www.highperformanceformat.com/01c9af1532b509e005bf16b2aad3a46b/invoke.js"></script>
+  </div>
 
-<!-- SCRIPT FOR SEARCH + TOGGLE + AUTO-OPEN -->
-<script>
-  function searchPosts() {
-    const input = document.getElementById('searchInput').value.toLowerCase();
-    const posts = document.querySelectorAll('.post');
-    posts.forEach(post => {
-      const title = post.querySelector('h2').innerText.toLowerCase();
-      post.style.display = title.includes(input) ? 'block' : 'none';
-    });
-  }
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <p>© 2023 Filmy Cine Time.</p>
+      <p>Disclaimer: This site does not store any files on its server. All contents are provided by non-affiliated third parties.</p>
+    </div>
+  </footer>
 
-  function togglePost(btn) {
-    const fullDesc = btn.previousElementSibling;
-    if (fullDesc.style.display === "none") {
-      fullDesc.style.display = "block";
-      btn.style.display = "none";
+  <!-- Scripts -->
+  <script>
+    function togglePost(button) {
+      const post = button.closest('.post');
+      post.classList.toggle('expanded');
+      button.innerText = post.classList.contains('expanded') ? 'SHOW LESS' : 'READ MORE';
     }
-  }
 
-  window.onload = function () {
-    const hash = window.location.hash;
-    if (hash.startsWith("#post-")) {
-      const post = document.querySelector(hash);
-      if (post) {
-        const fullDesc = post.querySelector('.full-desc');
-        const readMoreBtn = post.querySelector('.read-more');
-        if (fullDesc && readMoreBtn) {
-          fullDesc.style.display = 'block';
-          readMoreBtn.style.display = 'none';
+    function searchPosts() {
+      const input = document.getElementById('searchInput').value.toLowerCase();
+      const posts = document.querySelectorAll('.post');
+
+      posts.forEach(post => {
+        const title = post.querySelector('h2').innerText.toLowerCase();
+        post.style.display = title.includes(input) ? 'block' : 'none';
+      });
+    }
+
+    // Auto expand post from URL hash
+    window.onload = function () {
+      const hash = window.location.hash;
+      if (hash.startsWith("#post-")) {
+        const post = document.querySelector(hash);
+        if (post) {
+          post.classList.add("expanded");
+          const readMoreBtn = post.querySelector(".read-more");
+          if (readMoreBtn) {
+            readMoreBtn.innerText = "SHOW LESS";
+          }
           post.scrollIntoView({ behavior: 'smooth' });
         }
       }
-    }
-  };
-</script>
+    };
+  </script>
 
 </body>
 </html>
