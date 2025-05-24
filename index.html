@@ -11,15 +11,15 @@
     }
 
     body {
-      background-color: #222;
-      color: #fff;
+      background-color: #f0f2f5; /* Light grey background */
+      color: #333; /* Dark text color */
       font-family: Arial, sans-serif;
       margin: 0;
       padding: 20px;
     }
 
     h1 {
-      color: #FFD700;
+      color: #c62828; /* A strong red color for the title */
       text-align: center;
     }
 
@@ -32,35 +32,34 @@
       padding: 10px;
       font-size: 16px;
       border-radius: 5px;
-      border: none;
+      border: 1px solid #ccc; /* Light border */
       width: 80%;
       max-width: 400px;
+      background-color: #fff;
+      color: #333;
     }
 
     .post {
-      background: #333;
-      padding: 15px;
+      background: #fff; /* White background for posts */
+      padding: 20px;
       margin-bottom: 30px;
       border-radius: 8px;
-      display: block; /* Default, will be managed by JS for deep linking */
+      border: 1px solid #e0e0e0; /* Light border for post card */
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05); /* Subtle shadow */
     }
 
-    .post.hidden-by-hash {
-        display: none !important;
-    }
+    .post.hidden-by-hash,
     .post.hidden-by-search {
         display: none !important;
     }
 
-
     .post-header {
-      display: flex;
-      gap: 15px; /* Space between image and text */
-      align-items: flex-start; /* Align items to the top */
+      /* No longer flex, children will stack. Image first, then details. */
     }
 
     .post-image-container {
-      flex-shrink: 0; /* Prevent image container from shrinking */
+      text-align: center; /* Center the image */
+      margin-bottom: 20px; /* Space between image and details */
     }
 
     .post img {
@@ -68,16 +67,18 @@
       height: 250px; /* Target height */
       object-fit: cover; /* Crop to fill, maintaining aspect ratio */
       border-radius: 12px;
-      /* margin-bottom: 15px; Removed as it's now part of flex layout */
+      display: inline-block; /* Allows text-align center to work */
     }
     
     .post-details {
-      flex-grow: 1; /* Allow text details to take remaining space */
+      /* Details will naturally be below the image container */
+      text-align: left; /* Ensure text within details is left-aligned */
     }
 
     .post h2 {
-      color: #ff4d4d;
-      margin-top: 0; /* Remove default top margin */
+      color: #d32f2f; /* Reddish color for movie titles */
+      margin-top: 0; 
+      margin-bottom: 10px;
     }
 
     .description-snippet {
@@ -87,37 +88,63 @@
       -webkit-box-orient: vertical;
       text-overflow: ellipsis;
       margin-bottom: 10px;
+      color: #555; /* Slightly lighter text for description */
     }
 
     .full-description {
       display: none; /* Hidden by default */
       margin-bottom: 10px;
+      color: #333; /* Standard text color for full description */
     }
+    .full-description p {
+        margin-bottom: 10px;
+        line-height: 1.6;
+    }
+
 
     .toggle-read-more,
     .continue-button {
       display: inline-block;
-      margin-top: 10px;
-      padding: 8px 15px;
+      margin-top: 15px;
+      padding: 10px 18px;
       border-radius: 5px;
       font-weight: bold;
       text-decoration: none;
       font-size: 16px;
       cursor: pointer;
       border: none;
+      transition: background-color 0.3s ease;
     }
 
     .toggle-read-more {
-      background-color: #00BFFF;
+      background-color: #007bff; /* Bootstrap primary blue */
       color: #fff;
+    }
+    .toggle-read-more:hover {
+        background-color: #0056b3;
     }
     
     .continue-button {
-      background-color: #4CAF50; /* Green for continue */
+      background-color: #28a745; /* Bootstrap success green */
       color: white;
       display: none; /* Hidden by default, shown after "Read More" */
-      margin-left: 10px; /* Space it out if Read More is still visible */
+      margin-left: 10px; 
     }
+    .continue-button:hover {
+        background-color: #1e7e34;
+    }
+
+    .share-link { /* Style for the "Share this post" link */
+        font-size: 0.9em;
+        color: #007bff;
+        text-decoration: none;
+        display: inline-block;
+        margin-top: 5px;
+    }
+    .share-link:hover {
+        text-decoration: underline;
+    }
+
 
     .ad-slot {
       text-align: center;
@@ -128,11 +155,11 @@
         text-align: center;
         margin-top: 40px;
         padding-top: 20px;
-        border-top: 1px solid #444;
+        border-top: 1px solid #ddd; /* Lighter border for footer */
     }
     footer p {
         font-size: 0.9em;
-        color: #aaa;
+        color: #777; /* Muted grey for footer text */
     }
   </style>
 </head>
@@ -161,7 +188,7 @@
 
   <!-- POST 1 -->
   <div class="post" id="post-Mission_Impossible_The_Final_Reckoning">
-    <div class="post-header">
+    <div class="post-header"> <!-- This div now just groups image and details vertically -->
       <div class="post-image-container">
         <img src="https://raw.githubusercontent.com/Filmy-Cine-Time/Filmy-Cine-Time.github.io/main/image/Mission_Impossible_The%20Final%20Reckoning.jpg" alt="Mission_Impossible_The Final Reckoning movie poster">
       </div>
@@ -174,8 +201,7 @@
         <button class="toggle-read-more" data-action="read-more">Read More</button>
         <a class="continue-button" href="https://linksense.in/Rf6CE/" target="_blank">Continue</a>
         <br><br>
-        <!-- This link is for sharing the specific post URL -->
-        <a href="#post-Mission_Impossible_The_Final_Reckoning" style="font-size:0.8em; color:#ccc;">Share this post</a>
+        <a href="#post-Mission_Impossible_The_Final_Reckoning" class="share-link">Share this post</a>
       </div>
     </div>
   </div>
@@ -208,7 +234,7 @@
         <button class="toggle-read-more" data-action="read-more">Read More</button>
         <a class="continue-button" href="https://linksense.in/gzjJ6CRC" target="_blank">Continue</a>
         <br><br>
-        <a href="#post-The_Conjuring_Hindi_Dubbed" style="font-size:0.8em; color:#ccc;">Share this post</a>
+        <a href="#post-The_Conjuring_Hindi_Dubbed" class="share-link">Share this post</a>
       </div>
     </div>
   </div>
@@ -228,7 +254,7 @@
   </div>
 
   <!-- POST 3 -->
-  <div class="post" id="post-RAid_2"> <!-- Changed ID for consistency, was RAid_2 -->
+  <div class="post" id="post-RAid_2">
     <div class="post-header">
       <div class="post-image-container">
         <img src="https://raw.githubusercontent.com/Filmy-Cine-Time/Filmy-Cine-Time.github.io/main/image/raid%202.jpg" alt="Raid 2 Poster">
@@ -241,7 +267,7 @@
         <button class="toggle-read-more" data-action="read-more">Read More</button>
         <a class="continue-button" href="https://linksense.in/Bvw7" target="_blank">Continue</a>
         <br><br>
-        <a href="#post-RAid_2" style="font-size:0.8em; color:#ccc;">Share this post</a>
+        <a href="#post-RAid_2" class="share-link">Share this post</a>
       </div>
     </div>
   </div>
@@ -273,16 +299,14 @@
         const toggleButton = post.querySelector('.toggle-read-more');
         const continueButton = post.querySelector('.continue-button');
         
-        // Store original full HTML content
         post.dataset.fullDescription = descriptionContent.innerHTML;
 
-        // Create snippet (initially, or if it was "Read Less"-ed)
         const firstP = descriptionContent.querySelector('p');
         if (firstP) {
             const snippetHTML = `<div class="description-snippet">${firstP.outerHTML}</div>`;
             descriptionContent.innerHTML = snippetHTML;
-        } else { // Fallback if no <p> tag, just use all content for snippet logic
-             const snippetHTML = `<div class="description-snippet">${descriptionContent.innerHTML}</div>`;
+        } else {
+             const snippetHTML = `<div class="description-snippet">${descriptionContent.innerHTML.substring(0,100)}...</div>`; // Fallback
              descriptionContent.innerHTML = snippetHTML;
         }
 
@@ -298,8 +322,8 @@
             const firstPContent = new DOMParser().parseFromString(post.dataset.fullDescription, 'text/html').body.firstChild;
             if (firstPContent && firstPContent.outerHTML) {
                  descriptionContent.innerHTML = `<div class="description-snippet">${firstPContent.outerHTML}</div>`;
-            } else { // Fallback
-                 descriptionContent.innerHTML = `<div class="description-snippet">${post.dataset.fullDescription.substring(0,150)}...</div>`; // crude fallback
+            } else { 
+                 descriptionContent.innerHTML = `<div class="description-snippet">${post.dataset.fullDescription.substring(0,100)}...</div>`;
             }
             toggleButton.textContent = 'Read More';
             toggleButton.dataset.action = 'read-more';
@@ -315,100 +339,108 @@
 
       if (hash) {
         try {
-          postToShow = document.querySelector(hash); // hash already includes #
+          postToShow = document.querySelector(hash);
         } catch (e) {
           console.warn("Invalid hash selector:", hash);
-          postToShow = null; // Ensure it's null if querySelector throws error
+          postToShow = null;
         }
       }
       
       const searchInput = document.getElementById('searchInput').value.toLowerCase();
 
       posts.forEach(post => {
-        // First, handle hash visibility
         if (postToShow) {
           if (post === postToShow) {
             post.classList.remove('hidden-by-hash');
-            // Automatically expand the deep-linked post if it's not already
             const toggleButton = post.querySelector('.toggle-read-more');
             if (toggleButton && toggleButton.dataset.action === 'read-more') {
               toggleButton.click();
             }
+            // Ensure this post is not hidden by search if it's the hash target
+             const title = post.querySelector('h2').innerText.toLowerCase();
+             if (searchInput && !title.includes(searchInput)) {
+                post.classList.add('hidden-by-search');
+             } else {
+                post.classList.remove('hidden-by-search');
+             }
+
           } else {
             post.classList.add('hidden-by-hash');
+            post.classList.remove('hidden-by-search'); // Other posts not primary target of search
           }
-        } else {
+        } else { // No specific post by hash, so all are potentially visible
           post.classList.remove('hidden-by-hash');
-        }
-
-        // Then, handle search visibility if no hash is exclusively showing one post
-        // Or if hash is present, we only care about the visibility of postToShow for search
-        if (!postToShow || post === postToShow) {
-            const title = post.querySelector('h2').innerText.toLowerCase();
-            if (searchInput && !title.includes(searchInput)) {
-                post.classList.add('hidden-by-search');
-            } else {
-                post.classList.remove('hidden-by-search');
-            }
-        } else if (postToShow && post !== postToShow) {
-             // If a specific post is shown by hash, other posts remain hidden by hash,
-             // so search status doesn't override that for them.
-             post.classList.remove('hidden-by-search'); // Clear search hiding if it was hidden by hash
+          // Apply search filtering
+          const title = post.querySelector('h2').innerText.toLowerCase();
+          if (searchInput && !title.includes(searchInput)) {
+              post.classList.add('hidden-by-search');
+          } else {
+              post.classList.remove('hidden-by-search');
+          }
         }
       });
     }
 
     function searchPosts() {
-      // When searching, we effectively ignore the hash for filtering purposes
-      // but handleHashChange will re-evaluate if search is cleared
       const input = document.getElementById('searchInput').value.toLowerCase();
       
       posts.forEach(post => {
         const title = post.querySelector('h2').innerText.toLowerCase();
         const isHashTarget = window.location.hash && post.id === window.location.hash.substring(1);
 
-        if (input) { // If there is search input
+        if (input) { 
             if (title.includes(input)) {
                 post.classList.remove('hidden-by-search');
-                // If this post was also the hash target, ensure it's not hidden by hash logic
-                if(isHashTarget) post.classList.remove('hidden-by-hash');
+                if(isHashTarget) post.classList.remove('hidden-by-hash'); 
+                else if (window.location.hash && !isHashTarget) {
+                    // If there's a hash for another post, this post (even if it matches search) should remain hidden by hash
+                    post.classList.add('hidden-by-hash');
+                } else {
+                    // No hash, or this IS the hash target, remove hash hiding
+                    post.classList.remove('hidden-by-hash');
+                }
+
             } else {
                 post.classList.add('hidden-by-search');
             }
-        } else { // If search input is empty
+        } else { 
             post.classList.remove('hidden-by-search');
-            // Re-apply hash logic when search is cleared
-            handleHashChange(); // This will show only hash target or all if no hash
+            // When search is cleared, re-apply hash logic fully.
+            // handleHashChange will take care of showing only hash target or all if no hash.
         }
       });
-
-      // If search input is empty and there was a hash, handleHashChange will take care of it.
-      // If search input is NOT empty, we need to ensure non-matching hash targets are hidden.
-      if (input && window.location.hash) {
-          const hashTarget = document.querySelector(window.location.hash);
-          if (hashTarget && !hashTarget.classList.contains('hidden-by-search')) {
-              // If hash target matches search, ensure other posts are hidden
-              posts.forEach(p => {
-                  if (p !== hashTarget) p.classList.add('hidden-by-hash');
-              });
-          } else if (hashTarget && hashTarget.classList.contains('hidden-by-search')) {
-              // If hash target does NOT match search, all posts are subject to search filtering
-              // and hash target itself is hidden by search.
-              // We need to make sure other posts are not hidden by hash.
-              posts.forEach(p => p.classList.remove('hidden-by-hash'));
-          }
-      } else if (!input) {
-        handleHashChange(); // If search cleared, re-apply hash logic fully
+       // After processing search, if search is empty, let handleHashChange take over completely.
+      if (!input) {
+        handleHashChange();
+      } else {
+        // If search is active, and there's a hash, ensure non-matching-search hash target is hidden
+        // and other posts are hidden by hash if they are not the search result.
+        const currentHash = window.location.hash;
+        if(currentHash) {
+            const hashedPost = document.querySelector(currentHash);
+            posts.forEach(p => {
+                if (p !== hashedPost && !p.classList.contains('hidden-by-search')) {
+                    // If a post matches search but is not the hashed post, it should be hidden by hash.
+                    // Unless the hashed post itself is hidden by search.
+                    if(hashedPost && hashedPost.classList.contains('hidden-by-search')) {
+                        p.classList.remove('hidden-by-hash');
+                    } else {
+                        p.classList.add('hidden-by-hash');
+                    }
+                } else if (p === hashedPost && p.classList.contains('hidden-by-search')) {
+                    // If the hashed post is hidden by search, then other search results can show
+                     posts.forEach(op => { if(!op.classList.contains('hidden-by-search')) op.classList.remove('hidden-by-hash')});
+                }
+            });
+        }
       }
     }
 
-    // Initial setup
     document.addEventListener('DOMContentLoaded', () => {
       initializePosts();
-      handleHashChange(); // Handle initial URL hash if present
+      handleHashChange(); 
     });
 
-    // Listen for hash changes (e.g., user clicks a #post-ID link)
     window.addEventListener('hashchange', handleHashChange);
 
   </script>
