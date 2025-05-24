@@ -1,5 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html><html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
@@ -78,32 +77,21 @@
     }
   </style>
 </head>
-<body>
-
-  <h1>Filmy Cine Time - Latest Posts</h1>
-
-  <!-- Search Box -->
-  <div class="search-container">
+<body>  <h1>Filmy Cine Time - Latest Posts</h1>  <div class="search-container">
     <input type="text" id="searchInput" placeholder="Search movie..." onkeyup="searchPosts()" />
-  </div>
-
-  <!-- Example POST -->
-  <div class="post" id="post-Mission_Impossible_The_Final_Reckoning">
-    <h2>Movie Title: Mission Impossible The Final Reckoning</h2>
-    <img src="https://raw.githubusercontent.com/Filmy-Cine-Time/Filmy-Cine-Time.github.io/main/image/Mission_Impossible_The Final Reckoning.jpg" alt="Poster">
-    
-    <div class="post-content">
-      <p>IMDb RATING : 7.6/10</p>
-      <p>Our lives are the sum of our choices. Tom Cruise is Ethan Hunt in Mission: Impossible - The Final Reckoning. Director: Christopher McQuarrie, Writers: Bruce Geller, Erik Jendresen, Christopher McQuarrie, Stars: Tom Cruise, Hayley Atwell, Ving Rhames</p>
+  </div>  <!-- POST CONTAINER -->  <div id="postsContainer">
+    <div class="post" id="post-Mission_Impossible_The_Final_Reckoning">
+      <h2>Movie Title: Mission Impossible The Final Reckoning</h2>
+      <img src="https://raw.githubusercontent.com/Filmy-Cine-Time/Filmy-Cine-Time.github.io/main/image/Mission_Impossible_The%20Final%20Reckoning.jpg" alt="Poster">
+      <div class="post-content">
+        <p>IMDb RATING : 7.6/10</p>
+        <p>Our lives are the sum of our choices. Tom Cruise is Ethan Hunt in Mission: Impossible - The Final Reckoning. Director: Christopher McQuarrie, Writers: Bruce Geller, Erik Jendresen, Christopher McQuarrie, Stars: Tom Cruise, Hayley Atwell, Ving Rhames</p>
+      </div>
+      <span class="read-more" onclick="togglePost(this)">READ MORE</span>
+      <br>
+      <a class="read-more continue-btn" href="https://linksense.in/Rf6CE/" target="_blank">Continue</a>
     </div>
-    
-    <span class="read-more" onclick="togglePost(this)">READ MORE</span>
-    <br>
-    <a class="read-more continue-btn" href="https://linksense.in/Rf6CE/" target="_blank">Continue</a>
-  </div>
-
-  <!-- AD SLOT -->
-  <div class="ad-slot">
+  </div>  <!-- AD SLOT -->  <div class="ad-slot">
     <script type="text/javascript">
       atOptions = {
         'key' : '01c9af1532b509e005bf16b2aad3a46b',
@@ -114,18 +102,12 @@
       };
     </script>
     <script type="text/javascript" src="//www.highperformanceformat.com/01c9af1532b509e005bf16b2aad3a46b/invoke.js"></script>
-  </div>
-
-  <!-- Footer -->
-  <footer>
+  </div>  <footer>
     <div class="container">
       <p>© 2023 Filmy Cine Time.</p>
       <p>Disclaimer: This site does not store any files on its server. All contents are provided by non-affiliated third parties.</p>
     </div>
-  </footer>
-
-  <!-- Scripts -->
-  <script>
+  </footer>  <script>
     function togglePost(button) {
       const post = button.closest('.post');
       post.classList.toggle('expanded');
@@ -142,22 +124,20 @@
       });
     }
 
-    // Auto expand post from URL hash
     window.onload = function () {
       const hash = window.location.hash;
       if (hash.startsWith("#post-")) {
-        const post = document.querySelector(hash);
-        if (post) {
-          post.classList.add("expanded");
-          const readMoreBtn = post.querySelector(".read-more");
-          if (readMoreBtn) {
-            readMoreBtn.innerText = "SHOW LESS";
-          }
-          post.scrollIntoView({ behavior: 'smooth' });
+        const postId = hash.substring(1);
+        const postElement = document.getElementById(postId);
+        if (postElement) {
+          postElement.classList.add("expanded");
+          const readMore = postElement.querySelector(".read-more");
+          if (readMore) readMore.innerText = "SHOW LESS";
+          setTimeout(() => {
+            postElement.scrollIntoView({ behavior: "smooth" });
+          }, 300);
         }
       }
-    };
-  </script>
-
-</body>
+    }
+  </script></body>
 </html>
