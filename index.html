@@ -1,13 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Filmy Cine Time</title>
   <style>
     html {
       scroll-behavior: smooth;
     }
+
     body {
       background-color: #222;
       color: #fff;
@@ -15,14 +17,17 @@
       margin: 0;
       padding: 20px;
     }
+
     h1 {
       color: #FFD700;
       text-align: center;
     }
+
     .search-container {
       text-align: center;
       margin: 20px 0;
     }
+
     .search-container input {
       padding: 10px;
       font-size: 16px;
@@ -31,55 +36,108 @@
       width: 80%;
       max-width: 400px;
     }
+
     .post {
       background: #333;
       padding: 15px;
       margin-bottom: 30px;
       border-radius: 8px;
-      position: relative;
+      display: block; /* Default, will be managed by JS for deep linking */
     }
+
+    .post.hidden-by-hash {
+        display: none !important;
+    }
+    .post.hidden-by-search {
+        display: none !important;
+    }
+
+
+    .post-header {
+      display: flex;
+      gap: 15px; /* Space between image and text */
+      align-items: flex-start; /* Align items to the top */
+    }
+
+    .post-image-container {
+      flex-shrink: 0; /* Prevent image container from shrinking */
+    }
+
+    .post img {
+      width: 300px;  /* Target width */
+      height: 250px; /* Target height */
+      object-fit: cover; /* Crop to fill, maintaining aspect ratio */
+      border-radius: 12px;
+      /* margin-bottom: 15px; Removed as it's now part of flex layout */
+    }
+    
+    .post-details {
+      flex-grow: 1; /* Allow text details to take remaining space */
+    }
+
     .post h2 {
       color: #ff4d4d;
+      margin-top: 0; /* Remove default top margin */
     }
-    .post img {
-      width: 300px;
-      height: 250px;
-      object-fit: cover;
-      border-radius: 12px;
-      margin-bottom: 15px;
-    }
-    .post-content {
-      max-height: 60px;
+
+    .description-snippet {
       overflow: hidden;
-      transition: max-height 0.4s ease;
+      display: -webkit-box;
+      -webkit-line-clamp: 2; /* Show 2 lines */
+      -webkit-box-orient: vertical;
+      text-overflow: ellipsis;
+      margin-bottom: 10px;
     }
-    .post.expanded .post-content {
-      max-height: 1000px;
+
+    .full-description {
+      display: none; /* Hidden by default */
+      margin-bottom: 10px;
     }
-    .read-more {
+
+    .toggle-read-more,
+    .continue-button {
       display: inline-block;
       margin-top: 10px;
-      color: #00BFFF;
+      padding: 8px 15px;
+      border-radius: 5px;
       font-weight: bold;
-      text-decoration: underline;
+      text-decoration: none;
       font-size: 16px;
       cursor: pointer;
+      border: none;
     }
-    .continue-btn {
-      display: none;
-      margin-top: 15px;
+
+    .toggle-read-more {
+      background-color: #00BFFF;
+      color: #fff;
     }
-    .post.expanded .continue-btn {
-      display: inline-block;
+    
+    .continue-button {
+      background-color: #4CAF50; /* Green for continue */
+      color: white;
+      display: none; /* Hidden by default, shown after "Read More" */
+      margin-left: 10px; /* Space it out if Read More is still visible */
     }
+
     .ad-slot {
       text-align: center;
       margin: 20px 0;
     }
+
+    footer {
+        text-align: center;
+        margin-top: 40px;
+        padding-top: 20px;
+        border-top: 1px solid #444;
+    }
+    footer p {
+        font-size: 0.9em;
+        color: #aaa;
+    }
   </style>
 </head>
-<body>
 
+<body>
   <h1>Filmy Cine Time - Latest Posts</h1>
 
   <!-- Search Box -->
@@ -91,11 +149,11 @@
   <div class="ad-slot">
     <script type="text/javascript">
       atOptions = {
-        'key' : '374d428da381c7ef3c5b425d6ecb63cb',
-        'format' : 'iframe',
-        'height' : 50,
-        'width' : 320,
-        'params' : {}
+        'key': '374d428da381c7ef3c5b425d6ecb63cb',
+        'format': 'iframe',
+        'height': 50,
+        'width': 320,
+        'params': {}
       };
     </script>
     <script type="text/javascript" src="//www.highperformanceformat.com/374d428da381c7ef3c5b425d6ecb63cb/invoke.js"></script>
@@ -103,28 +161,34 @@
 
   <!-- POST 1 -->
   <div class="post" id="post-Mission_Impossible_The_Final_Reckoning">
-    <h2>Movie Title: Mission Impossible The Final Reckoning</h2>
-    <img src="https://raw.githubusercontent.com/Filmy-Cine-Time/Filmy-Cine-Time.github.io/main/image/Mission_Impossible_The Final Reckoning.jpg" alt="Poster">
-    
-    <div class="post-content">
-      <p>IMDb RATING : 7.6/10</p>
-      <p>Our lives are the sum of our choices. Tom Cruise is Ethan Hunt in Mission: Impossible - The Final Reckoning. Director: Christopher McQuarrie, Writers: Bruce Geller, Erik Jendresen, Christopher McQuarrie, Stars: Tom Cruise, Hayley Atwell, Ving Rhames</p>
+    <div class="post-header">
+      <div class="post-image-container">
+        <img src="https://raw.githubusercontent.com/Filmy-Cine-Time/Filmy-Cine-Time.github.io/main/image/Mission_Impossible_The%20Final%20Reckoning.jpg" alt="Mission_Impossible_The Final Reckoning movie poster">
+      </div>
+      <div class="post-details">
+        <h2>Movie Title: Mission_Impossible_The_Final_Reckoning</h2>
+        <div class="description-content">
+          <p>IMDb RATING : 7.6/10.</p>
+          <p>Our lives are the sum of our choices. Tom Cruise is Ethan Hunt in Mission: Impossible - The Final Reckoning. Director: Christopher McQuarrie, Writers: Bruce Geller, Erik Jendresen, Christopher McQuarrie, Stars: Tom Cruise, Hayley Atwell, Ving Rhames.</p>
+        </div>
+        <button class="toggle-read-more" data-action="read-more">Read More</button>
+        <a class="continue-button" href="https://linksense.in/Rf6CE/" target="_blank">Continue</a>
+        <br><br>
+        <!-- This link is for sharing the specific post URL -->
+        <a href="#post-Mission_Impossible_The_Final_Reckoning" style="font-size:0.8em; color:#ccc;">Share this post</a>
+      </div>
     </div>
-    
-    <span class="read-more" onclick="togglePost(this)">READ MORE</span>
-    <br>
-    <a class="read-more continue-btn" href="https://linksense.in/Rf6CE/" target="_blank">Continue</a>
   </div>
 
   <!-- AD SLOT -->
   <div class="ad-slot">
     <script type="text/javascript">
       atOptions = {
-        'key' : '01c9af1532b509e005bf16b2aad3a46b',
-        'format' : 'iframe',
-        'height' : 250,
-        'width' : 300,
-        'params' : {}
+        'key': '01c9af1532b509e005bf16b2aad3a46b',
+        'format': 'iframe',
+        'height': 250,
+        'width': 300,
+        'params': {}
       };
     </script>
     <script type="text/javascript" src="//www.highperformanceformat.com/01c9af1532b509e005bf16b2aad3a46b/invoke.js"></script>
@@ -132,44 +196,54 @@
 
   <!-- POST 2 -->
   <div class="post" id="post-The_Conjuring_Hindi_Dubbed">
-    <h2>Movie Title: The Conjuring (Hindi Dubbed)</h2>
-    <img src="https://raw.githubusercontent.com/Filmy-Cine-Time/Filmy-Cine-Time.github.io/main/image/the-conjuring-last-rites.jpg" alt="The Conjuring Poster">
-    
-    <div class="post-content">
-      <p>Ek zabardast film jisme emotions aur action ka combo hai.</p>
+    <div class="post-header">
+      <div class="post-image-container">
+        <img src="https://raw.githubusercontent.com/Filmy-Cine-Time/Filmy-Cine-Time.github.io/main/image/the-conjuring-last-rites.jpg" alt="The Conjuring Poster">
+      </div>
+      <div class="post-details">
+        <h2>Movie Title: The Conjuring (Hindi Dubbed)</h2>
+        <div class="description-content">
+          <p>Ek zabardast film jisme emotions aur action ka combo hai. Paranormal investigators Ed and Lorraine Warren work to help a family terrorized by a dark presence in their farmhouse. Based on true events, this chilling story will keep you on the edge of your seat.</p>
+        </div>
+        <button class="toggle-read-more" data-action="read-more">Read More</button>
+        <a class="continue-button" href="https://linksense.in/gzjJ6CRC" target="_blank">Continue</a>
+        <br><br>
+        <a href="#post-The_Conjuring_Hindi_Dubbed" style="font-size:0.8em; color:#ccc;">Share this post</a>
+      </div>
     </div>
-    
-    <span class="read-more" onclick="togglePost(this)">READ MORE</span>
-    <br>
-    <a class="read-more continue-btn" href="https://linksense.in/gzjJ6CRC" target="_blank">Continue</a>
   </div>
 
   <!-- AD SLOT -->
   <div class="ad-slot">
     <script type="text/javascript">
       atOptions = {
-        'key' : '2e3b06efedb57a2cf8338294eb132644',
-        'format' : 'iframe',
-        'height' : 300,
-        'width' : 160,
-        'params' : {}
+        'key': '2e3b06efedb57a2cf8338294eb132644',
+        'format': 'iframe',
+        'height': 300,
+        'width': 160,
+        'params': {}
       };
     </script>
     <script type="text/javascript" src="//www.highperformanceformat.com/2e3b06efedb57a2cf8338294eb132644/invoke.js"></script>
   </div>
 
   <!-- POST 3 -->
-  <div class="post" id="post-RAid_2">
-    <h2>Movie Title: RAid 2</h2>
-    <img src="https://raw.githubusercontent.com/Filmy-Cine-Time/Filmy-Cine-Time.github.io/main/image/raid 2.jpg" alt="Raid 2 Poster">
-    
-    <div class="post-content">
-      <p>In 1989 Rajasthan, IPS officer Patnaik raids a palace but fails. After requesting a bribe, he's transferred to Bhoj, where he investigates Dada Bhai, a respected local figure. Suspended after a failed raid, he uncovers hidden truths.</p>
+  <div class="post" id="post-RAid_2"> <!-- Changed ID for consistency, was RAid_2 -->
+    <div class="post-header">
+      <div class="post-image-container">
+        <img src="https://raw.githubusercontent.com/Filmy-Cine-Time/Filmy-Cine-Time.github.io/main/image/raid%202.jpg" alt="Raid 2 Poster">
+      </div>
+      <div class="post-details">
+        <h2>Movie Title: RAid_2</h2>
+        <div class="description-content">
+          <p>In 1989 Rajasthan, IPS officer Patnaik raids a palace but fails. After requesting a bribe, he's transferred to Bhoj, where he investigates Dada Bhai, a respected local figure. Suspended after a failed raid, he uncovers hidden truths and must fight against corruption to bring justice.</p>
+        </div>
+        <button class="toggle-read-more" data-action="read-more">Read More</button>
+        <a class="continue-button" href="https://linksense.in/Bvw7" target="_blank">Continue</a>
+        <br><br>
+        <a href="#post-RAid_2" style="font-size:0.8em; color:#ccc;">Share this post</a>
+      </div>
     </div>
-    
-    <span class="read-more" onclick="togglePost(this)">READ MORE</span>
-    <br>
-    <a class="read-more continue-btn" href="https://linksense.in/Bvw7" target="_blank">Continue</a>
   </div>
 
   <!-- AD SLOT -->
@@ -183,7 +257,6 @@
     <script type='text/javascript' src='//pl26679185.profitableratecpm.com/7d/04/2b/7d042b6adae192ba710511c3c8a5447b.js'></script>
   </div>
 
-  <!-- Footer -->
   <footer>
     <div class="container">
       <p>© 2023 Filmy Cine Time.</p>
@@ -191,17 +264,153 @@
     </div>
   </footer>
 
-  <!-- Scripts -->
   <script>
-    function togglePost(button) {
-      const post = button.closest('.post');
-      post.classList.toggle('expanded');
-      button.innerText = post.classList.contains('expanded') ? 'SHOW LESS' : 'READ MORE';
+    const posts = document.querySelectorAll('.post');
+
+    function initializePosts() {
+      posts.forEach(post => {
+        const descriptionContent = post.querySelector('.description-content');
+        const toggleButton = post.querySelector('.toggle-read-more');
+        const continueButton = post.querySelector('.continue-button');
+        
+        // Store original full HTML content
+        post.dataset.fullDescription = descriptionContent.innerHTML;
+
+        // Create snippet (initially, or if it was "Read Less"-ed)
+        const firstP = descriptionContent.querySelector('p');
+        if (firstP) {
+            const snippetHTML = `<div class="description-snippet">${firstP.outerHTML}</div>`;
+            descriptionContent.innerHTML = snippetHTML;
+        } else { // Fallback if no <p> tag, just use all content for snippet logic
+             const snippetHTML = `<div class="description-snippet">${descriptionContent.innerHTML}</div>`;
+             descriptionContent.innerHTML = snippetHTML;
+        }
+
+        toggleButton.addEventListener('click', () => {
+          const isReadingMore = toggleButton.dataset.action === 'read-more';
+          if (isReadingMore) {
+            descriptionContent.innerHTML = `<div class="full-description">${post.dataset.fullDescription}</div>`;
+            descriptionContent.querySelector('.full-description').style.display = 'block';
+            toggleButton.textContent = 'Read Less';
+            toggleButton.dataset.action = 'read-less';
+            if (continueButton) continueButton.style.display = 'inline-block';
+          } else {
+            const firstPContent = new DOMParser().parseFromString(post.dataset.fullDescription, 'text/html').body.firstChild;
+            if (firstPContent && firstPContent.outerHTML) {
+                 descriptionContent.innerHTML = `<div class="description-snippet">${firstPContent.outerHTML}</div>`;
+            } else { // Fallback
+                 descriptionContent.innerHTML = `<div class="description-snippet">${post.dataset.fullDescription.substring(0,150)}...</div>`; // crude fallback
+            }
+            toggleButton.textContent = 'Read More';
+            toggleButton.dataset.action = 'read-more';
+            if (continueButton) continueButton.style.display = 'none';
+          }
+        });
+      });
+    }
+
+    function handleHashChange() {
+      const hash = window.location.hash;
+      let postToShow = null;
+
+      if (hash) {
+        try {
+          postToShow = document.querySelector(hash); // hash already includes #
+        } catch (e) {
+          console.warn("Invalid hash selector:", hash);
+          postToShow = null; // Ensure it's null if querySelector throws error
+        }
+      }
+      
+      const searchInput = document.getElementById('searchInput').value.toLowerCase();
+
+      posts.forEach(post => {
+        // First, handle hash visibility
+        if (postToShow) {
+          if (post === postToShow) {
+            post.classList.remove('hidden-by-hash');
+            // Automatically expand the deep-linked post if it's not already
+            const toggleButton = post.querySelector('.toggle-read-more');
+            if (toggleButton && toggleButton.dataset.action === 'read-more') {
+              toggleButton.click();
+            }
+          } else {
+            post.classList.add('hidden-by-hash');
+          }
+        } else {
+          post.classList.remove('hidden-by-hash');
+        }
+
+        // Then, handle search visibility if no hash is exclusively showing one post
+        // Or if hash is present, we only care about the visibility of postToShow for search
+        if (!postToShow || post === postToShow) {
+            const title = post.querySelector('h2').innerText.toLowerCase();
+            if (searchInput && !title.includes(searchInput)) {
+                post.classList.add('hidden-by-search');
+            } else {
+                post.classList.remove('hidden-by-search');
+            }
+        } else if (postToShow && post !== postToShow) {
+             // If a specific post is shown by hash, other posts remain hidden by hash,
+             // so search status doesn't override that for them.
+             post.classList.remove('hidden-by-search'); // Clear search hiding if it was hidden by hash
+        }
+      });
     }
 
     function searchPosts() {
+      // When searching, we effectively ignore the hash for filtering purposes
+      // but handleHashChange will re-evaluate if search is cleared
       const input = document.getElementById('searchInput').value.toLowerCase();
-      const posts = document.querySelectorAll('.post');
-
+      
       posts.forEach(post => {
-        const title = post.querySelector('h2').innerText0
+        const title = post.querySelector('h2').innerText.toLowerCase();
+        const isHashTarget = window.location.hash && post.id === window.location.hash.substring(1);
+
+        if (input) { // If there is search input
+            if (title.includes(input)) {
+                post.classList.remove('hidden-by-search');
+                // If this post was also the hash target, ensure it's not hidden by hash logic
+                if(isHashTarget) post.classList.remove('hidden-by-hash');
+            } else {
+                post.classList.add('hidden-by-search');
+            }
+        } else { // If search input is empty
+            post.classList.remove('hidden-by-search');
+            // Re-apply hash logic when search is cleared
+            handleHashChange(); // This will show only hash target or all if no hash
+        }
+      });
+
+      // If search input is empty and there was a hash, handleHashChange will take care of it.
+      // If search input is NOT empty, we need to ensure non-matching hash targets are hidden.
+      if (input && window.location.hash) {
+          const hashTarget = document.querySelector(window.location.hash);
+          if (hashTarget && !hashTarget.classList.contains('hidden-by-search')) {
+              // If hash target matches search, ensure other posts are hidden
+              posts.forEach(p => {
+                  if (p !== hashTarget) p.classList.add('hidden-by-hash');
+              });
+          } else if (hashTarget && hashTarget.classList.contains('hidden-by-search')) {
+              // If hash target does NOT match search, all posts are subject to search filtering
+              // and hash target itself is hidden by search.
+              // We need to make sure other posts are not hidden by hash.
+              posts.forEach(p => p.classList.remove('hidden-by-hash'));
+          }
+      } else if (!input) {
+        handleHashChange(); // If search cleared, re-apply hash logic fully
+      }
+    }
+
+    // Initial setup
+    document.addEventListener('DOMContentLoaded', () => {
+      initializePosts();
+      handleHashChange(); // Handle initial URL hash if present
+    });
+
+    // Listen for hash changes (e.g., user clicks a #post-ID link)
+    window.addEventListener('hashchange', handleHashChange);
+
+  </script>
+</body>
+</html>
