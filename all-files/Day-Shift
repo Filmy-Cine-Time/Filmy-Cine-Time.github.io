@@ -1,0 +1,93 @@
+<!DOCTYPE html><html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>New Movies Flix</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #111;
+      color: #fff;
+      text-align: center;
+    }
+    .ad-top, .ad-bottom {
+      background: #222;
+      padding: 15px;
+      margin: 10px 0;
+    }
+    .poster {
+      position: relative;
+      display: inline-block;
+      margin-top: 20px;
+    }
+    .poster img {
+      width: 300px;
+      border-radius: 10px;
+    }
+    .movie-title {
+      position: absolute;
+      bottom: 10px;
+      left: 0;
+      right: 0;
+      background: rgba(0, 0, 0, 0.6);
+      padding: 10px;
+      font-size: 20px;
+      font-weight: bold;
+    }
+    .countdown {
+      margin: 20px auto;
+      font-size: 24px;
+      font-weight: bold;
+      color: #f5c518;
+    }
+    .download-btn {
+      display: none;
+      margin: 20px auto;
+      padding: 12px 24px;
+      font-size: 18px;
+      background-color: #28a745;
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="ad-top">
+    <!-- Top Ad Code Here -->
+    <p><script type="text/javascript">
+	atOptions = {
+		'key' : '6e0337c64ae2bc9c1d39213f96a48740',
+		'format' : 'iframe',
+		'height' : 250,
+		'width' : 300,
+		'params' : {}
+	};
+</script>
+<script type="text/javascript" src="//www.highperformanceformat.com/6e0337c64ae2bc9c1d39213f96a48740/invoke.js"></script></p>
+  </div>  <div class="poster">
+    <img src="https://via.placeholder.com/300x450" alt="Movie Poster">
+    <div class="movie-title">Movie Title Goes Here</div>
+  </div>  <div class="countdown" id="countdown">Please wait... 10</div>
+  <a id="downloadBtn" class="download-btn" href="YOUR_DOWNLOAD_LINK_HERE">Download Now</a>  <div class="ad-bottom">
+    <!-- Bottom Ad Code Here -->
+    <p>Ad Placeholder (Bottom)</p>
+  </div>  <script>
+    let timeLeft = 10;
+    const countdownEl = document.getElementById("countdown");
+    const downloadBtn = document.getElementById("downloadBtn");
+
+    const timer = setInterval(() => {
+      timeLeft--;
+      countdownEl.textContent = `Please wait... ${timeLeft}`;
+      if (timeLeft <= 0) {
+        clearInterval(timer);
+        countdownEl.style.display = "none";
+        downloadBtn.style.display = "inline-block";
+      }
+    }, 1000);
+  </script></body>
+</html>
