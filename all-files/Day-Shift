@@ -68,15 +68,38 @@
 	};
 </script>
 <script type="text/javascript" src="//www.highperformanceformat.com/6e0337c64ae2bc9c1d39213f96a48740/invoke.js"></script></p>
-  </div>  <div class="poster">
-    <img src="https://via.placeholder.com/300x450" alt="Movie Poster">
-    <div class="movie-title">Movie Title Goes Here</div>
-  </div>  <div class="countdown" id="countdown">Please wait... 10</div>
-  <a id="downloadBtn" class="download-btn" href="YOUR_DOWNLOAD_LINK_HERE">Download Now</a>  <div class="ad-bottom">
-    <!-- Bottom Ad Code Here -->
-    <p>Ad Placeholder (Bottom)</p>
+  
+</div>  <div class="poster">
+    <img src="https://raw.githubusercontent.com/Filmy-Cine-Time/Filmy-Cine-Time.github.io/main/image/dayshift-feature-use.jpg" alt="Movie Poster">
+    <div class="Day_Shift">Day Shift</div>
+  </div>  <div class="countdown" id="countdown">Please wait... 15</div>
+  <a id="downloadBtn" class="download-btn" href="https://gofile.io/d/7kc3QZ">Download Now</a>  <div class="ad-bottom">
+</div>
+<p<script type="text/javascript">
+<p><script type="text/javascript">
+	atOptions = {
+		'key' : '964f8a8d9be036708a1f60eb6921feaf',
+		'format' : 'iframe',
+		'height' : 50,
+		'width' : 320,
+		'params' : {}
+	};
+</script>
+<script type="text/javascript" src="//www.highperformanceformat.com/964f8a8d9be036708a1f60eb6921feaf/invoke.js"></script></p>
+
+<!-- Bottom Ad Code Here -->
+    <p<script type="text/javascript">
+	atOptions = {
+		'key' : 'fbda4c561ee5d22bc599a0cd1f69091d',
+		'format' : 'iframe',
+		'height' : 300,
+		'width' : 160,
+		'params' : {}
+	};
+</script>
+<script type="text/javascript" src="//www.highperformanceformat.com/fbda4c561ee5d22bc599a0cd1f69091d/invoke.js"></script>></p>
   </div>  <script>
-    let timeLeft = 10;
+    let timeLeft = 15;
     const countdownEl = document.getElementById("countdown");
     const downloadBtn = document.getElementById("downloadBtn");
 
