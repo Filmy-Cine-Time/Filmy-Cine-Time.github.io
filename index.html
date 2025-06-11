@@ -11,7 +11,6 @@
     <header>
         <h1>Filmy Cine Time</h1>
         <nav>
-            <!-- Nav links with data-filter attribute -->
             <a href="#" class="nav-link active" data-filter="all">All</a>
             <a href="#" class="nav-link" data-filter="drama">Drama</a>
             <a href="#" class="nav-link" data-filter="comedy">Comedy</a>
@@ -21,13 +20,31 @@
         </nav>
     </header>
 
+    <!-- ========= TELEGRAM BUTTON SECTION START ========= -->
+    <div class="telegram-container">
+        <a href="https://t.me/Filmycinetime" target="_blank" class="telegram-button">
+            Join our Telegram for regular updates
+        </a>
+    </div>
+    <!-- ========= TELEGRAM BUTTON SECTION END ========= -->
+
+
+    <!-- ========= AD SLOT 1 (Banner Ad) START ========= -->
+    <div class="ad-slot">
+        <!-- YAHAN APNA AD CODE PASTE KAREIN -->
+        <!-- Example: <script type="text/javascript"> ... </script> -->
+        <p class="ad-placeholder-text">Ad Slot (e.g., 728x90)</p>
+    </div>
+    <!-- ========= AD SLOT 1 END ========= -->
+
+
     <main>
-        <!-- NOTE: Movie cards are now in ONE container. JS will handle filtering. -->
         <section class="category-row">
             <h2 class="category-title">All Titles</h2>
             <div class="movies-container">
                 
-                <!-- Movie 1: Category "thriller drama" -->
+                <!-- Yahan aapke saare .movie-card rahenge -->
+                <!-- Example Movie Card -->
                 <div class="movie-card" 
                      data-category="thriller drama"
                      data-title="Knock Knock"
@@ -35,10 +52,8 @@
                      data-description="A dedicated husband and father is left home alone for the weekend. Two stranded young women unexpectedly knock on his door for help. What starts out as a kind gesture results in a dangerous seduction and a deadly game of cat and mouse."
                      data-details="Starring: Keanu Reeves, Lorenza Izzo, Ana de Armas"
                      data-download-link="https://linksense.in/your-download-link-here">
-                    
                     <div class="card-poster">
                         <img src="https://raw.githubusercontent.com/Filmy-Cine-Time/Filmy-Cine-Time.github.io/main/image/ground-zero-et00439759-1745052355.jpg" alt="Knock Knock Poster">
-                        <span class="poster-tag">Leaving Soon</span>
                     </div>
                     <div class="card-info">
                         <h3>Knock Knock</h3>
@@ -46,80 +61,18 @@
                     </div>
                 </div>
 
-                <!-- Movie 2: Category "drama" -->
-                <div class="movie-card" 
-                     data-category="drama"
-                     data-title="Hamilton: One Shot to Broadway"
-                     data-img="https://m.media-amazon.com/images/M/MV5BNjViNWRjYWEtZTI0NC00N2E3LTk0YzQtYTQwYmMDUZDQ5Yjg4XkEyXkFqcGdeQXVyMjUxMTY4MTU@._V1_FMjpg_UX1000_.jpg"
-                     data-description="The real story of a real-life genius. An exploration of the creation of the hit Broadway show, Hamilton."
-                     data-details="Starring: Lin-Manuel Miranda, Daveed Diggs, Renée Elise Goldsberry"
-                     data-download-link="https://linksense.in/your-download-link-here">
-                    
-                    <div class="card-poster">
-                        <img src="https://m.media-amazon.com/images/M/MV5BNjViNWRjYWEtZTI0NC00N2E3LTk0YzQtYTQwYmMDUZDQ5Yjg4XkEyXkFqcGdeQXVyMjUxMTY4MTU@._V1_FMjpg_UX1000_.jpg" alt="Hamilton Poster">
-                    </div>
-                    <div class="card-info">
-                        <h3>Hamilton: One Shot..</h3>
-                        <p>Lin-Manuel Miranda</p>
-                    </div>
-                </div>
+                <!-- ... baaki saare movie cards ... -->
 
-                <!-- Movie 3: Category "comedy drama" -->
-                <div class="movie-card" 
-                     data-category="comedy drama"
-                     data-title="Rushmore"
-                     data-img="https://m.media-amazon.com/images/M/MV5BMTcwODMyMjAwMV5BMl5BanBnXkFtZTcwODY2ODQyMQ@@._V1_FMjpg_UX1000_.jpg"
-                     data-description="A teenager at Rushmore Academy falls for a much older teacher and befriends a wealthy industrialist. Later, he finds out that his love interest and his friend are having an affair, which prompts him to begin a vendetta."
-                     data-details="Starring: Jason Schwartzman, Bill Murray, Olivia Williams"
-                     data-download-link="https://linksense.in/your-download-link-here">
-                    
-                    <div class="card-poster">
-                        <img src="https://m.media-amazon.com/images/M/MV5BMTcwODMyMjAwMV5BMl5BanBnXkFtZTcwODY2ODQyMQ@@._V1_FMjpg_UX1000_.jpg" alt="Rushmore Poster">
-                    </div>
-                    <div class="card-info">
-                        <h3>Rushmore</h3>
-                        <p>Jason Schwartzman</p>
-                    </div>
-                </div>
-
-                <!-- Movie 4: Category "thriller" -->
-                 <div class="movie-card" 
-                     data-category="thriller"
-                     data-title="The Night Clerk"
-                     data-img="https://m.media-amazon.com/images/M/MV5BN2U5YzIzM2YtNDYwOS00ODhmLTg2YjEtZDE5ZTQ5YWU5NjI4XkEyXkFqcGdeQXVyMjMxOTE0ODA@._V1_FMjpg_UX1000_.jpg"
-                     data-description="Voyeuristic hotel clerk Bart Bromley becomes the prime suspect when a woman is murdered during his shift."
-                     data-details="Starring: Tye Sheridan, Ana de Armas, Helen Hunt"
-                     data-download-link="https://linksense.in/your-download-link-here">
-                    
-                    <div class="card-poster">
-                        <img src="https://m.media-amazon.com/images/M/MV5BN2U5YzIzM2YtNDYwOS00ODhmLTg2YjEtZDE5ZTQ5YWU5NjI4XkEyXkFqcGdeQXVyMjMxOTE0ODA@._V1_FMjpg_UX1000_.jpg" alt="The Night Clerk Poster">
-                    </div>
-                    <div class="card-info">
-                        <h3>The Night Clerk</h3>
-                        <p>Tye Sheridan</p>
-                    </div>
-                </div>
-
-                <!-- Movie 5: Category "drama romance" -->
-                 <div class="movie-card" 
-                     data-category="drama romance"
-                     data-title="Hitchcock"
-                     data-img="https://m.media-amazon.com/images/M/MV5BMTU3OTE3Nzc4MV5BMl5BanBnXkFtZTcwODYkMjc2OA@@._V1_FMjpg_UX1000_.jpg"
-                     data-description="The relationship between Alfred Hitchcock and his wife Alma Reville during the filming of 'Psycho' in 1959 is uncovered."
-                     data-details="Starring: Anthony Hopkins, Helen Mirren, Scarlett Johansson"
-                     data-download-link="https://linksense.in/your-download-link-here">
-                    
-                    <div class="card-poster">
-                        <img src="https://m.media-amazon.com/images/M/MV5BMTU3OTE3Nzc4MV5BMl5BanBnXkFtZTcwODYkMjc2OA@@._V1_FMjpg_UX1000_.jpg" alt="Hitchcock Poster">
-                    </div>
-                    <div class="card-info">
-                        <h3>Hitchcock</h3>
-                        <p>Anthony Hopkins</p>
-                    </div>
-                </div>
-                 <!-- Aap yahan aur movie cards add kar sakte hain... -->
             </div>
         </section>
+
+        <!-- ========= AD SLOT 2 (In-content Ad) START ========= -->
+        <div class="ad-slot">
+            <!-- YAHAN APNA DUSRA AD CODE PASTE KAREIN -->
+            <p class="ad-placeholder-text">Ad Slot (e.g., 300x250)</p>
+        </div>
+        <!-- ========= AD SLOT 2 END ========= -->
+
     </main>
     
     <!-- MODAL (Popup Window) - Isko edit na karein -->
