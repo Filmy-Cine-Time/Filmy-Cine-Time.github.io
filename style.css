@@ -276,3 +276,59 @@ header nav a.active {
     border-radius: 5px;
     overflow: hidden;
 }
+/* ========= TELEGRAM BUTTON STYLING ========= */
+.telegram-container {
+    text-align: center;
+    padding: 20px 50px;
+}
+
+.telegram-button {
+    display: inline-block;
+    padding: 12px 25px;
+    background: linear-gradient(45deg, #37aee2, #1e96c8); /* Telegram Blue Gradient */
+    color: #ffffff;
+    font-size: 1.1em;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.telegram-button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+
+/* ========= AD SLOT STYLING ========= */
+.ad-slot {
+    margin: 40px auto; /* Ads ke upar neeche space */
+    padding: 10px;
+    max-width: 750px; /* Standard banner ad width se thoda zyada */
+    background-color: #222;
+    border: 1px dashed #444; /* Dikhane ke liye ki yahan ad aayega */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 90px; /* Standard banner ad height */
+}
+
+.ad-placeholder-text {
+    color: #666;
+    font-size: 0.9em;
+}
+
+/* Jab aap ad code daalenge to yeh placeholder text gayab ho jayega */
+.ad-slot:has(script),
+.ad-slot:has(ins),
+.ad-slot:has(iframe) {
+    border: none;
+    padding: 0;
+    background-color: transparent;
+}
+.ad-slot:has(script) .ad-placeholder-text,
+.ad-slot:has(ins) .ad-placeholder-text,
+.ad-slot:has(iframe) .ad-placeholder-text {
+    display: none;
+}
