@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Filmy Cine Time</title>
-    <!-- Link to your CSS file -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -12,121 +11,116 @@
     <header>
         <h1>Filmy Cine Time</h1>
         <nav>
-            <a href="#">Drama</a>
-            <a href="#">Comedy</a>
-            <a href="#">Romance</a>
-            <a href="#">Children</a>
-            <a href="#">Horror</a>
+            <a href="#" class="nav-link active" data-filter="all">All</a>
+            <a href="#" class="nav-link" data-filter="drama">Drama</a>
+            <a href="#" class="nav-link" data-filter="comedy">Comedy</a>
+            <a href="#" class="nav-link" data-filter="romance">Romance</a>
+            <a href="#" class="nav-link" data-filter="thriller">Thriller</a>
+            <a href="#" class="nav-link" data-filter="horror">Horror</a>
         </nav>
     </header>
 
+    <!-- ========= TELEGRAM BUTTON SECTION START ========= -->
+    <div class="telegram-container">
+        <a href="https://t.me/Filmycinetime" target="_blank" class="telegram-button">
+            Join Telegram 
+        </a>
+    </div>
+    <!-- ========= TELEGRAM BUTTON SECTION END ========= -->
+
+
+    <!-- ========= AD SLOT 1 (Banner Ad) START ========= -->
+    <div class="ad-slot">
+        <!-- YAHAN APNA AD CODE PASTE KAREIN -->
+        <<script type="text/javascript">
+	atOptions = {
+		'key' : '374d428da381c7ef3c5b425d6ecb63cb',
+		'format' : 'iframe',
+		'height' : 50,
+		'width' : 320,
+		'params' : {}
+	};
+</script>
+<script type="text/javascript" src="//www.highperformanceformat.com/374d428da381c7ef3c5b425d6ecb63cb/invoke.js"></script>
+        <p class="ad-placeholder-text">Ad Slot (e.g., 728x90)</p>
+    </div>
+    <!-- ========= AD SLOT 1 END ========= -->
+
+
     <main>
-        <!-- SECTION 1: TRENDING TITLES -->
         <section class="category-row">
-            <h2 class="category-title">Trending Titles <a href="#" class="see-more">See More ></a></h2>
+            <h2 class="category-title">All Titles</h2>
             <div class="movies-container">
                 
-                <!-- Movie Card Template START: Nayi movie ke liye isko copy karein -->
+                <!-- Yahan aapke saare .movie-card rahenge -->
+                <!-- Post 1 -->
                 <div class="movie-card" 
-                     data-title="Knock Knock"
+                     data-category="action drama"
+                     data-title="Ground Zero"
                      data-img="https://raw.githubusercontent.com/Filmy-Cine-Time/Filmy-Cine-Time.github.io/main/image/ground-zero-et00439759-1745052355.jpg"
-                     data-description="A dedicated husband and father is left home alone for the weekend. Two stranded young women unexpectedly knock on his door for help. What starts out as a kind gesture results in a dangerous seduction and a deadly game of cat and mouse."
-                     data-details="Starring: Keanu Reeves, Lorenza Izzo, Ana de Armas"
-                     data-download-link="https://linksense.in/your-download-link-here">
-                    
+                     data-description="After the 2001 Parliament attack, BSF officer Dubey leads a 2-year probe uncovering the mastermind Ghazi Baba, enabling India's biggest anti-terror operation."
+                     data-details="Starring: Emraan Hashmi,Sai Tamhankar, Aeklavya Tomer"
+                     data-download-link="https://linksense.in/download_Ground_Zero">
                     <div class="card-poster">
-                        <img src="https://raw.githubusercontent.com/Filmy-Cine-Time/Filmy-Cine-Time.github.io/main/image/ground-zero-et00439759-1745052355.jpg" alt="Knock Knock Poster">
-                        <!-- Special tag example: <span class="poster-tag">Leaving Soon</span> -->
+                        <img src="https://raw.githubusercontent.com/Filmy-Cine-Time/Filmy-Cine-Time.github.io/main/image/ground-zero-et00439759-1745052355.jpg" alt="Download_Ground_Zero">
                     </div>
                     <div class="card-info">
-                        <h3>Knock Knock</h3>
-                        <p>Keanu Reeves</p>
+                        <h3>Ground_Zero</h3>
+                        <p>IMDb RATING 7.5/10</p>
                     </div>
                 </div>
-                <!-- Movie Card Template END -->
 
-                <!-- Movie Card -->
+                <!-- Post 2 -->
                 <div class="movie-card" 
-                     data-title="Hamilton: One Shot to Broadway"
-                     data-img="https://m.media-amazon.com/images/M/MV5BNjViNWRjYWEtZTI0NC00N2E3LTk0YzQtYTQwYmMDUZDQ5Yjg4XkEyXkFqcGdeQXVyMjUxMTY4MTU@._V1_FMjpg_UX1000_.jpg"
-                     data-description="The real story of a real-life genius. An exploration of the creation of the hit Broadway show, Hamilton."
-                     data-details="Starring: Lin-Manuel Miranda, Daveed Diggs, Renée Elise Goldsberry"
-                     data-download-link="https://linksense.in/your-download-link-here">
-                    
+                     data-category="drama"
+                     data-title="Chatrak (Mushroom)"
+                     data-img="https://raw.githubusercontent.com/Filmy-Cine-Time/Filmy-Cine-Time.github.io/main/image/Chatrak.jpg"
+                     data-description="Chatrak is a 2011 Indian Bengali erotic drama film directed by Sri Lankan director Vimukthi Jayasundara. It was screened at several film festivals worldwide."
+                     data-details="Starring: Sudip Mukherjee, Paoli Dam, Anubrata Basu"
+                     data-download-link="https://linksense.in/vREhqD">
                     <div class="card-poster">
-                        <img src="https://m.media-amazon.com/images/M/MV5BNjViNWRjYWEtZTI0NC00N2E3LTk0YzQtYTQwYmMDUZDQ5Yjg4XkEyXkFqcGdeQXVyMjUxMTY4MTU@._V1_FMjpg_UX1000_.jpg" alt="Hamilton Poster">
+                        <img src="https://raw.githubusercontent.com/Filmy-Cine-Time/Filmy-Cine-Time.github.io/main/image/Chatrak.jpg" alt="Download_Ground_Zero">
                     </div>
                     <div class="card-info">
-                        <h3>Hamilton: One Shot..</h3>
-                        <p>Lin-Manuel Miranda</p>
-                    </div>
-                </div>
-
-                <!-- Movie Card -->
-                <div class="movie-card" 
-                     data-title="Rushmore"
-                     data-img="https://m.media-amazon.com/images/M/MV5BMTcwODMyMjAwMV5BMl5BanBnXkFtZTcwODY2ODQyMQ@@._V1_FMjpg_UX1000_.jpg"
-                     data-description="A teenager at Rushmore Academy falls for a much older teacher and befriends a wealthy industrialist. Later, he finds out that his love interest and his friend are having an affair, which prompts him to begin a vendetta."
-                     data-details="Starring: Jason Schwartzman, Bill Murray, Olivia Williams"
-                     data-download-link="https://linksense.in/your-download-link-here">
-                    
-                    <div class="card-poster">
-                        <img src="https://m.media-amazon.com/images/M/MV5BMTcwODMyMjAwMV5BMl5BanBnXkFtZTcwODY2ODQyMQ@@._V1_FMjpg_UX1000_.jpg" alt="Rushmore Poster">
-                    </div>
-                    <div class="card-info">
-                        <h3>Rushmore</h3>
-                        <p>Jason Schwartzman</p>
-                    </div>
-                </div>
-
-                 <!-- Add more movie cards here -->
-
-            </div>
-        </section>
-
-        <!-- SECTION 2: NEW RELEASES (Aap aise hi aur sections bana sakte hain) -->
-        <section class="category-row">
-            <h2 class="category-title">New Releases <a href="#" class="see-more">See More ></a></h2>
-            <div class="movies-container">
-                <!-- Add more movie cards for this category -->
-                <div class="movie-card" 
-                     data-title="The Night Clerk"
-                     data-img="https://m.media-amazon.com/images/M/MV5BN2U5YzIzM2YtNDYwOS00ODhmLTg2YjEtZDE5ZTQ5YWU5NjI4XkEyXkFqcGdeQXVyMjMxOTE0ODA@._V1_FMjpg_UX1000_.jpg"
-                     data-description="Voyeuristic hotel clerk Bart Bromley becomes the prime suspect when a woman is murdered during his shift."
-                     data-details="Starring: Tye Sheridan, Ana de Armas, Helen Hunt"
-                     data-download-link="https://linksense.in/your-download-link-here">
-                    
-                    <div class="card-poster">
-                        <img src="https://m.media-amazon.com/images/M/MV5BN2U5YzIzM2YtNDYwOS00ODhmLTg2YjEtZDE5ZTQ5YWU5NjI4XkEyXkFqcGdeQXVyMjMxOTE0ODA@._V1_FMjpg_UX1000_.jpg" alt="The Night Clerk Poster">
-                    </div>
-                    <div class="card-info">
-                        <h3>The Night Clerk</h3>
-                        <p>Tye Sheridan</p>
-                    </div>
-                </div>
-
-                 <div class="movie-card" 
-                     data-title="Hitchcock"
-                     data-img="https://m.media-amazon.com/images/M/MV5BMTU3OTE3Nzc4MV5BMl5BanBnXkFtZTcwODYkMjc2OA@@._V1_FMjpg_UX1000_.jpg"
-                     data-description="The relationship between Alfred Hitchcock and his wife Alma Reville during the filming of 'Psycho' in 1959 is uncovered."
-                     data-details="Starring: Anthony Hopkins, Helen Mirren, Scarlett Johansson"
-                     data-download-link="https://linksense.in/your-download-link-here">
-                    
-                    <div class="card-poster">
-                        <img src="https://m.media-amazon.com/images/M/MV5BMTU3OTE3Nzc4MV5BMl5BanBnXkFtZTcwODYkMjc2OA@@._V1_FMjpg_UX1000_.jpg" alt="Hitchcock Poster">
-                    </div>
-                    <div class="card-info">
-                        <h3>Hitchcock</h3>
-                        <p>Anthony Hopkins</p>
+                        <h3>Chatrak </h3>
+                        <p>IMDb RATING 3.9/10
+			WRONING: 18+</p>
                     </div>
                 </div>
 
             </div>
         </section>
+
+        <!-- ========= AD SLOT 2 (In-content Ad) START ========= -->
+        <div class="ad-slot">
+            <script type='text/javascript' src='//pl26679185.profitableratecpm.com/7d/04/2b/7d042b6adae192ba710511c3c8a5447b.js'></script>
+            <p class="ad-placeholder-text">Ad Slot (e.g., 300x250)</p>
+        </div>
+        <!-- ========= AD SLOT 2 END ========= -->
+<!-- Post 3 -->
+                <div class="movie-card" 
+                     data-category="horror"
+                     data-title="The Sand (Killer Beach)"
+                     data-img="https://raw.githubusercontent.com/Filmy-Cine-Time/Filmy-Cine-Time.github.io/main/image/The.Sand.jpg"
+                     data-description="A group of hung-over twenty-somethings awake to a beating sun, and a seemingly carnivorous beach that devours anything with a heartbeat that touches the sand."
+                     data-details="Starring: 	Brooke Butler, Meagan Holder and Mitchel Musso."
+                     data-download-link="https://linksense.in/zgygPZ">
+                    <div class="card-poster">
+                        <img src="https://raw.githubusercontent.com/Filmy-Cine-Time/Filmy-Cine-Time.github.io/main/image/The.Sand.jpg" alt="Download_Ground_Zero">
+                    </div>
+                    <div class="card-info">
+                        <h3>The Sand</h3>
+                        <p>IMDb RATING 3.8/10</p>
+                    </div>
+                </div>
+
+            </div>
+	    
     </main>
     
     <!-- MODAL (Popup Window) - Isko edit na karein -->
     <div id="movieModal" class="modal">
+        <!-- ... modal ka baaki code same rahega ... -->
         <div class="modal-content">
             <span class="close-button">×</span>
             <div class="modal-body">
@@ -137,16 +131,13 @@
                     <h2 id="modalTitle"></h2>
                     <p id="modalDescription"></p>
                     <p id="modalExtraDetails"></p>
-                    <div id="timer-container">
-                        <!-- Timer and Download button will be generated by JS -->
-                    </div>
+                    <div id="timer-container"></div>
                 </div>
             </div>
         </div>
     </div>
     
-    <!-- Link to your JavaScript file -->
     <script src="script.js"></script>
 
 </body>
-</html>
+        </html>
