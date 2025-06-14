@@ -17,6 +17,8 @@
             <a href="#" class="nav-link" data-filter="romance">Romance</a>
             <a href="#" class="nav-link" data-filter="thriller">Thriller</a>
             <a href="#" class="nav-link" data-filter="horror">Horror</a>
+            <!-- CHANGE 1: Naya 'Animated' category link add kiya gaya -->
+            <a href="#" class="nav-link" data-filter="animated">Animated</a>
         </nav>
     </header>
 
@@ -32,16 +34,16 @@
     <!-- ========= AD SLOT 1 (Banner Ad) START ========= -->
     <div class="ad-slot">
         <!-- YAHAN APNA AD CODE PASTE KAREIN -->
-        <<script type="text/javascript">
-	atOptions = {
-		'key' : '374d428da381c7ef3c5b425d6ecb63cb',
-		'format' : 'iframe',
-		'height' : 50,
-		'width' : 320,
-		'params' : {}
-	};
-</script>
-<script type="text/javascript" src="//www.highperformanceformat.com/374d428da381c7ef3c5b425d6ecb63cb/invoke.js"></script>
+        <script type="text/javascript">
+            atOptions = {
+                'key' : '374d428da381c7ef3c5b425d6ecb63cb',
+                'format' : 'iframe',
+                'height' : 50,
+                'width' : 320,
+                'params' : {}
+            };
+        </script>
+        <script type="text/javascript" src="//www.highperformanceformat.com/374d428da381c7ef3c5b425d6ecb63cb/invoke.js"></script>
         <p class="ad-placeholder-text">Ad Slot (e.g., 728x90)</p>
     </div>
     <!-- ========= AD SLOT 1 END ========= -->
@@ -52,41 +54,78 @@
             <h2 class="category-title">All Titles</h2>
             <div class="movies-container">
                 
-                <!-- Yahan aapke saare .movie-card rahenge -->
                 <!-- Post 1 -->
                 <div class="movie-card" 
-                     data-category="action drama"
+                     data-id="ground-zero" <!-- CHANGE 2: Unique ID for URL -->
+                     data-category="action drama thriller"
                      data-title="Ground Zero"
                      data-img="https://raw.githubusercontent.com/Filmy-Cine-Time/Filmy-Cine-Time.github.io/main/image/ground-zero-et00439759-1745052355.jpg"
                      data-description="After the 2001 Parliament attack, BSF officer Dubey leads a 2-year probe uncovering the mastermind Ghazi Baba, enabling India's biggest anti-terror operation."
-                     data-details="Starring: Emraan Hashmi,Sai Tamhankar, Aeklavya Tomer"
+                     data-details="Starring: Emraan Hashmi, Sai Tamhankar, Aeklavya Tomer"
                      data-download-link="https://linksense.in/download_Ground_Zero">
                     <div class="card-poster">
-                        <img src="https://raw.githubusercontent.com/Filmy-Cine-Time/Filmy-Cine-Time.github.io/main/image/ground-zero-et00439759-1745052355.jpg" alt="Download_Ground_Zero">
+                        <img src="https://raw.githubusercontent.com/Filmy-Cine-Time/Filmy-Cine-Time.github.io/main/image/ground-zero-et00439759-1745052355.jpg" alt="Ground_Zero Poster">
                     </div>
                     <div class="card-info">
-                        <h3>Ground_Zero</h3>
+                        <h3>Ground Zero</h3>
                         <p>IMDb RATING 7.5/10</p>
                     </div>
                 </div>
 
                 <!-- Post 2 -->
                 <div class="movie-card" 
-                     data-category="drama"
+                     data-id="chatrak-mushroom" <!-- CHANGE 2: Unique ID for URL -->
+                     data-category="drama romance"
                      data-title="Chatrak (Mushroom)"
                      data-img="https://raw.githubusercontent.com/Filmy-Cine-Time/Filmy-Cine-Time.github.io/main/image/Chatrak.jpg"
                      data-description="Chatrak is a 2011 Indian Bengali erotic drama film directed by Sri Lankan director Vimukthi Jayasundara. It was screened at several film festivals worldwide."
                      data-details="Starring: Sudip Mukherjee, Paoli Dam, Anubrata Basu"
                      data-download-link="https://linksense.in/vREhqD">
                     <div class="card-poster">
-                        <img src="https://raw.githubusercontent.com/Filmy-Cine-Time/Filmy-Cine-Time.github.io/main/image/Chatrak.jpg" alt="Download_Ground_Zero">
+                        <img src="https://raw.githubusercontent.com/Filmy-Cine-Time/Filmy-Cine-Time.github.io/main/image/Chatrak.jpg" alt="Chatrak Poster">
                     </div>
                     <div class="card-info">
-                        <h3>Chatrak </h3>
-                        <p>IMDb RATING 3.9/10
-			WRONING: 18+</p>
+                        <h3>Chatrak</h3>
+                        <p>IMDb RATING 3.9/10, WARNING: 18+</p>
                     </div>
                 </div>
+                
+                <!-- Post 3 -->
+                <div class="movie-card" 
+                     data-id="the-sand" <!-- CHANGE 2: Unique ID for URL -->
+                     data-category="horror thriller"
+                     data-title="The Sand (Killer Beach)"
+                     data-img="https://raw.githubusercontent.com/Filmy-Cine-Time/Filmy-Cine-Time.github.io/main/image/The.Sand.jpg"
+                     data-description="A group of hung-over twenty-somethings awake to a beating sun, and a seemingly carnivorous beach that devours anything with a heartbeat that touches the sand."
+                     data-details="Starring: Brooke Butler, Meagan Holder and Mitchel Musso."
+                     data-download-link="https://linksense.in/zgygPZ">
+                    <div class="card-poster">
+                        <img src="https://raw.githubusercontent.com/Filmy-Cine-Time/Filmy-Cine-Time.github.io/main/image/The.Sand.jpg" alt="The Sand Poster">
+                    </div>
+                    <div class="card-info">
+                        <h3>The Sand</h3>
+                        <p>IMDb RATING 3.8/10</p>
+                    </div>
+                </div>
+
+                <!-- CHANGE 3: Nayi Animated Movie ka Example Card -->
+                <div class="movie-card" 
+                     data-id="minions" <!-- Unique ID for URL -->
+                     data-category="comedy animated"
+                     data-title="Minions: The Rise of Gru"
+                     data-img="https://www.themoviedb.org/t/p/w500/A232e06kG5aM1oW8tYhX6nJVS2A.jpg"
+                     data-description="A fanboy of a supervillain supergroup known as the Vicious 6, Gru hatches a plan to become evil enough to join them, with the backup of his followers, the Minions."
+                     data-details="Starring: Steve Carell, Pierre Coffin, Taraji P. Henson"
+                     data-download-link="#">
+                    <div class="card-poster">
+                        <img src="https://www.themoviedb.org/t/p/w500/A232e06kG5aM1oW8tYhX6nJVS2A.jpg" alt="Minions Poster">
+                    </div>
+                    <div class="card-info">
+                        <h3>Minions</h3>
+                        <p>IMDb RATING 6.5/10</p>
+                    </div>
+                </div>
+
 
             </div>
         </section>
@@ -97,30 +136,11 @@
             <p class="ad-placeholder-text">Ad Slot (e.g., 300x250)</p>
         </div>
         <!-- ========= AD SLOT 2 END ========= -->
-<!-- Post 3 -->
-                <div class="movie-card" 
-                     data-category="horror"
-                     data-title="The Sand (Killer Beach)"
-                     data-img="https://raw.githubusercontent.com/Filmy-Cine-Time/Filmy-Cine-Time.github.io/main/image/The.Sand.jpg"
-                     data-description="A group of hung-over twenty-somethings awake to a beating sun, and a seemingly carnivorous beach that devours anything with a heartbeat that touches the sand."
-                     data-details="Starring: 	Brooke Butler, Meagan Holder and Mitchel Musso."
-                     data-download-link="https://linksense.in/zgygPZ">
-                    <div class="card-poster">
-                        <img src="https://raw.githubusercontent.com/Filmy-Cine-Time/Filmy-Cine-Time.github.io/main/image/The.Sand.jpg" alt="Download_Ground_Zero">
-                    </div>
-                    <div class="card-info">
-                        <h3>The Sand</h3>
-                        <p>IMDb RATING 3.8/10</p>
-                    </div>
-                </div>
-
-            </div>
 	    
     </main>
     
     <!-- MODAL (Popup Window) - Isko edit na karein -->
     <div id="movieModal" class="modal">
-        <!-- ... modal ka baaki code same rahega ... -->
         <div class="modal-content">
             <span class="close-button">×</span>
             <div class="modal-body">
