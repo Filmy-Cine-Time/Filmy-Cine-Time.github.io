@@ -6,8 +6,8 @@
 }
 
 body {
-    background-color: #141414; /* Dark background */
-    color: #ffffff; /* White text */
+    background-color: #141414;
+    color: #ffffff;
     font-family: Arial, sans-serif;
 }
 
@@ -18,23 +18,35 @@ header {
 
 header h1 {
     font-size: 2.5em;
-    color: #E50914; /* Netflix Red */
+    color: #E50914;
     margin-bottom: 20px;
+    text-align: center;
+}
+
+header nav {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap; /* Allows nav items to wrap on small screens */
+    gap: 10px; /* Space between nav items */
 }
 
 header nav a {
     color: #e5e5e5;
     text-decoration: none;
-    margin-right: 20px;
     font-size: 1.1em;
     padding: 8px 15px;
     border-radius: 5px;
-    background-color: #007BFF; /* Blue buttons from screenshot */
+    background-color: #007BFF;
     transition: background-color 0.3s;
 }
 
 header nav a:hover {
     background-color: #0056b3;
+}
+
+header nav a.active {
+    background-color: #E50914;
+    color: white;
 }
 
 /* Main Content & Movie Rows */
@@ -49,42 +61,19 @@ main {
 .category-title {
     font-size: 1.8em;
     margin-bottom: 20px;
-}
-
-.see-more {
-    font-size: 0.6em;
-    color: #54b9c5;
-    text-decoration: none;
-    vertical-align: middle;
-    margin-left: 15px;
+    border-left: 4px solid #E50914;
+    padding-left: 15px;
 }
 
 .movies-container {
     display: flex;
-    overflow-x: auto;
-    overflow-y: hidden;
-    padding-bottom: 20px; /* For scrollbar space */
+    flex-wrap: wrap;
+    gap: 20px; /* Space between cards */
+    justify-content: center; /* Center cards in the container */
 }
 
-/* Custom Scrollbar */
-.movies-container::-webkit-scrollbar {
-    height: 8px;
-}
-.movies-container::-webkit-scrollbar-track {
-    background: #222;
-}
-.movies-container::-webkit-scrollbar-thumb {
-    background: #555;
-    border-radius: 4px;
-}
-.movies-container::-webkit-scrollbar-thumb:hover {
-    background: #E50914;
-}
-
-/* Movie Card Styling */
 .movie-card {
-    flex: 0 0 180px; /* Do not grow, do not shrink, base width 180px */
-    margin-right: 15px;
+    flex: 0 1 180px; /* Flex-grow, Flex-shrink, Flex-basis */
     cursor: pointer;
     transition: transform 0.3s ease;
     background-color: #222;
@@ -92,13 +81,13 @@ main {
     overflow: hidden;
 }
 
+.movie-card.hidden {
+    display: none;
+}
+
 .movie-card:hover {
     transform: scale(1.05);
     z-index: 10;
-}
-
-.card-poster {
-    position: relative;
 }
 
 .movie-card img {
@@ -106,19 +95,6 @@ main {
     height: 260px;
     object-fit: cover;
     display: block;
-}
-
-.poster-tag {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    background-color: #e50914;
-    color: white;
-    padding: 5px;
-    text-align: center;
-    font-size: 0.9em;
-    font-weight: bold;
 }
 
 .card-info {
@@ -140,7 +116,7 @@ main {
 
 /* Modal (Popup) Styling */
 .modal {
-    display: none; /* Hidden by default */
+    display: none;
     position: fixed;
     z-index: 100;
     left: 0;
@@ -148,7 +124,7 @@ main {
     width: 100%;
     height: 100%;
     overflow: auto;
-    background-color: rgba(0, 0, 0, 0.85); /* Dark overlay */
+    background-color: rgba(0, 0, 0, 0.85);
 }
 
 .modal-content {
@@ -222,7 +198,7 @@ main {
 }
 
 #timer-container {
-    margin-top: auto; /* Pushes the timer to the bottom */
+    margin-top: auto;
     padding-top: 20px;
 }
 
@@ -248,35 +224,8 @@ main {
 .download-button:hover {
     background-color: #f6121d;
 }
-/* Style for the active navigation link */
-header nav a.active {
-    background-color: #E50914; /* Red color to show it's selected */
-    color: white;
-}
 
-/* Class to hide movie cards that don't match the filter */
-.movie-card.hidden {
-    display: none;
-}
-
-/* To make the movie container wrap items nicely */
-.movies-container {
-    display: flex;
-    flex-wrap: wrap; /* Allows items to wrap to the next line */
-    overflow-x: hidden; /* Hide horizontal scrollbar */
-    gap: 15px; /* Adds space between cards */
-}
-
-.movie-card {
-    flex: 0 0 180px;
-    margin-right: 0; /* Remove old margin as gap is used now */
-    cursor: pointer;
-    transition: transform 0.3s ease;
-    background-color: #222;
-    border-radius: 5px;
-    overflow: hidden;
-}
-/* ========= TELEGRAM BUTTON STYLING ========= */
+/* Telegram Button */
 .telegram-container {
     text-align: center;
     padding: 20px 50px;
@@ -285,7 +234,7 @@ header nav a.active {
 .telegram-button {
     display: inline-block;
     padding: 12px 25px;
-    background: linear-gradient(45deg, #37aee2, #1e96c8); /* Telegram Blue Gradient */
+    background: linear-gradient(45deg, #37aee2, #1e96c8);
     color: #ffffff;
     font-size: 1.1em;
     font-weight: bold;
@@ -300,18 +249,17 @@ header nav a.active {
     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
 }
 
-
-/* ========= AD SLOT STYLING ========= */
+/* Ad Slot */
 .ad-slot {
-    margin: 40px auto; /* Ads ke upar neeche space */
+    margin: 40px auto;
     padding: 10px;
-    max-width: 750px; /* Standard banner ad width se thoda zyada */
+    max-width: 750px;
     background-color: #222;
-    border: 1px dashed #444; /* Dikhane ke liye ki yahan ad aayega */
+    border: 1px dashed #444;
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 90px; /* Standard banner ad height */
+    min-height: 90px;
 }
 
 .ad-placeholder-text {
@@ -319,16 +267,63 @@ header nav a.active {
     font-size: 0.9em;
 }
 
-/* Jab aap ad code daalenge to yeh placeholder text gayab ho jayega */
-.ad-slot:has(script),
-.ad-slot:has(ins),
-.ad-slot:has(iframe) {
+.ad-slot:has(script), .ad-slot:has(ins), .ad-slot:has(iframe) {
     border: none;
     padding: 0;
     background-color: transparent;
 }
-.ad-slot:has(script) .ad-placeholder-text,
-.ad-slot:has(ins) .ad-placeholder-text,
-.ad-slot:has(iframe) .ad-placeholder-text {
+.ad-slot:has(script) .ad-placeholder-text, .ad-slot:has(ins) .ad-placeholder-text, .ad-slot:has(iframe) .ad-placeholder-text {
     display: none;
+}
+
+/* ========================================= */
+/* ========= MOBILE RESPONSIVE CSS ========= */
+/* ========================================= */
+
+@media screen and (max-width: 768px) {
+    header, main {
+        padding: 20px;
+    }
+
+    header h1 {
+        font-size: 2em;
+    }
+
+    header nav a {
+        font-size: 1em;
+        padding: 6px 12px;
+    }
+    
+    .movie-card {
+        flex: 0 1 calc(50% - 10px); /* 2 cards per row with gap */
+    }
+
+    .modal-content {
+        width: 95%;
+        margin: 10% auto;
+        padding: 20px;
+    }
+
+    .modal-body {
+        flex-direction: column; /* Stack poster and details vertically */
+    }
+
+    .modal-details h2 {
+        font-size: 1.8em;
+    }
+    
+    .modal-details p {
+        font-size: 1em;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .movie-card {
+        flex: 0 1 100%; /* 1 card per row on very small screens */
+    }
+
+    .download-button {
+        padding: 12px 25px;
+        font-size: 1em;
+    }
 }
