@@ -1,6 +1,11 @@
 document.addEventListener('DOMContentLoaded', () => {
 
-    // Get all the elements we need
+    // ========= ELEMENT SELECTIONS =========
+    // Filter ke liye
+    const filterLinks = document.querySelectorAll('.nav-link');
+    const movieCards = document.querySelectorAll('.movie-card');
+
+    // Modal (Popup) ke liye
     const modal = document.getElementById('movieModal');
     const modalImg = document.getElementById('modalImg');
     const modalTitle = document.getElementById('modalTitle');
@@ -8,44 +13,74 @@ document.addEventListener('DOMContentLoaded', () => {
     const modalExtraDetails = document.getElementById('modalExtraDetails');
     const timerContainer = document.getElementById('timer-container');
     const closeButton = document.querySelector('.close-button');
-    const movieCards = document.querySelectorAll('.movie-card');
 
-    let timerId = null; // To store the timer interval
+    let timerId = null; // Timer ko control karne ke liye
 
-    // Function to open the modal and populate it with data
+    // ===================================
+    // ========= FILTER LOGIC START =========
+    // ===================================
+
+    // Har filter link (All, Drama, etc.) par click event lagayenge
+    filterLinks.forEach(link => {
+        link.addEventListener('click', (event) => {
+            event.preventDefault(); // Link ke default behavior (page jump) ko roke
+
+            // Step 1: Sabhi link se 'active' class hatao
+            filterLinks.forEach(navLink => navLink.classList.remove('active'));
+
+            // Step 2: Jis link par click hua hai, uspe 'active' class lagao
+            link.classList.add('active');
+
+            // Step 3: Click hue link ka filter value nikalo (e.g., 'drama', 'all')
+            const selectedFilter = link.dataset.filter;
+
+            // Step 4: Sabhi movie cards ko check karo
+            movieCards.forEach(card => {
+                const cardCategories = card.dataset.category; // Card ki categories (e.g., 'action drama')
+
+                // Agar 'all' select kiya hai YA card ki category filter se match karti hai
+                if (selectedFilter === 'all' || cardCategories.includes(selectedFilter)) {
+                    card.classList.remove('hidden'); // Card ko dikhao
+                } else {
+                    card.classList.add('hidden'); // Card ko chhupa do
+                }
+            });
+        });
+    });
+
+
+    // ========================================
+    // ========= MODAL POPUP LOGIC START =========
+    // (Yeh aapka original code hai, jo bilkul theek tha)
+    // ========================================
+
+    // Modal ko kholne wala function
     const openModal = (card) => {
-        // Get data from the clicked card's data-* attributes
         const title = card.dataset.title;
         const imgSrc = card.dataset.img;
         const description = card.dataset.description;
         const details = card.dataset.details;
         const downloadLink = card.dataset.downloadLink;
 
-        // Populate the modal with the data
         modalTitle.textContent = title;
         modalImg.src = imgSrc;
         modalDescription.textContent = description;
         modalExtraDetails.textContent = details;
         
-        // Show the modal
         modal.style.display = 'block';
-        
-        // Start the timer
         startTimer(downloadLink);
     };
 
-    // Function to close the modal
+    // Modal ko band karne wala function
     const closeModal = () => {
         modal.style.display = 'none';
-        // IMPORTANT: Clear the timer if the modal is closed early
         if (timerId) {
-            clearInterval(timerId);
+            clearInterval(timerId); // Timer ko band karo agar modal close ho jaye
         }
-        // Clear the timer container for the next use
-        timerContainer.innerHTML = '';
+        timerContainer.innerHTML = ''; // Timer text ko saaf karo
     };
 
-    // Function to start the 10-second timer
+    // 10-second ka timer shuru karne wala function
     const startTimer = (downloadLink) => {
         let timeLeft = 10;
         timerContainer.innerHTML = `<p class="timer-text">Download will start in ${timeLeft} seconds...</p>`;
@@ -55,24 +90,23 @@ document.addEventListener('DOMContentLoaded', () => {
             if (timeLeft > 0) {
                 timerContainer.innerHTML = `<p class="timer-text">Download will start in ${timeLeft} seconds...</p>`;
             } else {
-                clearInterval(timerId); // Stop the timer
-                // Show the download button
+                clearInterval(timerId); // Timer roko
                 timerContainer.innerHTML = `<a href="${downloadLink}" class="download-button" target="_blank">Download Now</a>`;
             }
-        }, 1000); // Run every 1 second
+        }, 1000);
     };
 
-    // Add click event listeners to all movie cards
+    // Sabhi movie cards par click event lagao taaki modal khule
     movieCards.forEach(card => {
         card.addEventListener('click', () => {
             openModal(card);
         });
     });
 
-    // Add click event to the close button
+    // Close button par click event
     closeButton.addEventListener('click', closeModal);
 
-    // Add click event to the modal background (to close it)
+    // Modal ke bahar click karne par modal band ho
     window.addEventListener('click', (event) => {
         if (event.target == modal) {
             closeModal();
