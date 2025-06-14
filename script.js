@@ -72,7 +72,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Timer shuru karne wala function
     const startTimer = (downloadLink) => {
-        let timeLeft = 10;
+        let timeLeft = 20;
         timerContainer.innerHTML = `<p class="timer-text">Download will start in ${timeLeft} seconds...</p>`;
         timerId = setInterval(() => {
             timeLeft--;
